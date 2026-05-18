@@ -63,7 +63,12 @@ const QuizView = () => {
 
   const renderMarkdown = (text) => {
     if (!text) return '';
-    return { __html: marked.parse(text) };
+    const escaped = text
+      .replace(/\\\(/g, '\\\\(')
+      .replace(/\\\)/g, '\\\\)')
+      .replace(/\\\[/g, '\\\\[')
+      .replace(/\\\]/g, '\\\\]');
+    return { __html: marked.parse(escaped) };
   };
 
   if (isFinished) {
