@@ -1,0 +1,49 @@
+@use 'variables' as *;
+
+:root {
+  --bg: #{$slate-50};
+  --bg-card: #ffffff;
+  --text: #{$slate-900};
+  --text-muted: #{$slate-500};
+  --border: #{$slate-200};
+  --accent: #{$indigo-500};
+  --accent-soft: #{$indigo-50};
+}
+
+[data-theme="dark"] {
+  --bg: #{$slate-900};
+  --bg-card: #{$slate-800};
+  --text: #{$slate-100};
+  --text-muted: #{$slate-400};
+  --border: #{$slate-700};
+  --accent: #{$indigo-500};
+  --accent-soft: rgba(99, 102, 241, 0.15);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: $font-main;
+  transition: background-color 0.3s ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.hidden { display: none !important; }

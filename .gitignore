@@ -1,0 +1,4 @@
+extracted/
+.DS_Store
+*.docx
+.env

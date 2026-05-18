@@ -1,0 +1,237 @@
+@use '../assets/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.controls {
+  background: var(--bg-card);
+  padding: 1.25rem;
+  border-radius: $radius-md;
+  border: 1px solid var(--border);
+  box-shadow: $shadow-md;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  flex: 1;
+
+  .select {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-family: inherit;
+    
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  .jump {
+    width: 60px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.6rem;
+    border-radius: 12px;
+    color: var(--text);
+    text-align: center;
+    font-family: $font-mono;
+    
+    &::-webkit-inner-spin-button { display: none; }
+  }
+
+  .navBtn {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    transition: $transition-base;
+
+    &:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  }
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: $radius-lg;
+  border: 1px solid var(--border);
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+}
+
+.cardHeader {
+  padding: 1.25rem 1.5rem;
+  background: var(--accent-soft);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actionBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: $transition-base;
+
+  &:hover {
+    background: white;
+    color: var(--text);
+  }
+
+  &.starred { color: $warning; }
+  &.known { color: $success; }
+}
+
+.imageWrap {
+  padding: 2rem;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--border);
+
+  img {
+    max-height: 300px;
+    object-fit: contain;
+  }
+}
+
+.content {
+  padding: 2rem;
+}
+
+.questionText {
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: var(--text);
+}
+
+.options {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.option {
+  padding: 1.25rem;
+  border-radius: $radius-md;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: $transition-base;
+
+  &:hover:not(:disabled) {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &.correct {
+    border-color: $success;
+    background: rgba($success, 0.1);
+    color: $success;
+  }
+
+  &.wrong {
+    border-color: $danger;
+    background: rgba($danger, 0.1);
+    color: $danger;
+  }
+}
+
+.explanation {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  border-radius: $radius-md;
+  border-left: 4px solid var(--accent);
+
+  h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+  }
+
+  .markdownBody {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+
+    p { margin-bottom: 1rem; }
+    strong { color: var(--text); font-weight: 700; }
+    
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      
+      li { margin-bottom: 0.5rem; }
+    }
+
+    ul { list-style-type: disc; }
+    ol { list-style-type: decimal; }
+  }
+}
+
+.empty {
+  text-align: center;
+  padding: 4rem;
+  color: var(--text-muted);
+}
