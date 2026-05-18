@@ -9,7 +9,13 @@ const StudyView = () => {
   const { catalog, progress, toggleStar, toggleKnown, markViewed, setLastIndex } = useApp();
   const [topicFilter, setTopicFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    if (progress.lastIndex && catalog.questions.length > 0) {
+      const idx = catalog.questions.findIndex(q => q.id === progress.lastIndex);
+      return idx >= 0 ? idx : 0;
+    }
+    return 0;
+  });
   const [isTypesetting, setIsTypesetting] = useState(false);
 
   // Apply filters
@@ -24,25 +30,24 @@ const StudyView = () => {
 
   const currentQuestion = filteredQuestions[currentIndex];
 
+  // Sync with catalog questions once they load initially
+  useEffect(() => {
+    if (catalog.questions.length > 0 && progress.lastIndex) {
+      const idx = catalog.questions.findIndex(q => q.id === progress.lastIndex);
+      if (idx >= 0) {
+        setCurrentIndex(idx);
+      }
+    }
+  }, [catalog.questions.length === 0]);
+
   useEffect(() => {
     if (currentQuestion) {
       markViewed(currentQuestion.id);
-      // Only set last index if it's different to avoid redundant state updates
       if (progress.lastIndex !== currentQuestion.id) {
         setLastIndex(currentQuestion.id);
       }
     }
   }, [currentQuestion?.id]);
-
-  // Sync currentIndex when progress.lastIndex changes (e.g. clicked from Catalog)
-  useEffect(() => {
-    if (progress.lastIndex && filteredQuestions.length > 0) {
-      const idx = filteredQuestions.findIndex(q => q.id === progress.lastIndex);
-      if (idx >= 0 && idx !== currentIndex) {
-        setCurrentIndex(idx);
-      }
-    }
-  }, [progress.lastIndex, filteredQuestions.length]);
 
   const handleNext = () => setCurrentIndex(prev => (prev + 1) % filteredQuestions.length);
   const handlePrev = () => setCurrentIndex(prev => (prev - 1 + filteredQuestions.length) % filteredQuestions.length);
