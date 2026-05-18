@@ -10,6 +10,7 @@ const StudyView = () => {
   const [topicFilter, setTopicFilter] = useState('all');
   const [statusFilter, setStatusFilter] = useState('all');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTypesetting, setIsTypesetting] = useState(false);
 
   // Apply filters
   const filteredQuestions = catalog.questions.filter(q => {
@@ -38,13 +39,19 @@ const StudyView = () => {
   useEffect(() => {
     setSelectedOption(null);
     if (window.MathJax) {
-      window.MathJax.typesetPromise();
+      setIsTypesetting(true);
+      window.MathJax.typesetPromise()
+        .catch(err => console.error(err))
+        .finally(() => setIsTypesetting(false));
     }
   }, [currentQuestion?.id]);
 
   useEffect(() => {
     if (selectedOption !== null && window.MathJax) {
-      window.MathJax.typesetPromise();
+      setIsTypesetting(true);
+      window.MathJax.typesetPromise()
+        .catch(err => console.error(err))
+        .finally(() => setIsTypesetting(false));
     }
   }, [selectedOption]);
 
@@ -71,7 +78,8 @@ const StudyView = () => {
             <option value="known">Знаю</option>
           </select>
         </div>
-        <div className={styles.nav}>
+        <div className={styles.jumpWrapper}>
+          <span className={styles.jumpLabel}>Перейти к №:</span>
           <input 
             type="number" 
             className={styles.jump} 
@@ -84,8 +92,6 @@ const StudyView = () => {
               }
             }}
           />
-          <button onClick={handlePrev} className={styles.navBtn}><ChevronLeft /></button>
-          <button onClick={handleNext} className={styles.navBtn}><ChevronRight /></button>
         </div>
       </div>
 
@@ -121,7 +127,7 @@ const StudyView = () => {
             <img src={currentQuestion.image} alt="Вопрос" />
           </div>
 
-          <div className={styles.content}>
+          <div className={`${styles.content} ${isTypesetting ? styles.typesetting : ''}`}>
             {currentQuestion.questionText && (
               <div className={styles.questionText} dangerouslySetInnerHTML={renderMarkdown(currentQuestion.questionText)} />
             )}
@@ -158,6 +164,18 @@ const StudyView = () => {
                 <div className={styles.markdownBody} dangerouslySetInnerHTML={renderMarkdown(currentQuestion.explanation)} />
               </motion.div>
             )}
+          </div>
+
+          <div className={styles.cardNav}>
+            <button onClick={handlePrev} className={styles.cardNavBtn}>
+              <ChevronLeft size={18} /> <span>Предыдущий</span>
+            </button>
+            <span className={styles.cardNavIndex}>
+              <strong>{currentIndex + 1}</strong> из {filteredQuestions.length}
+            </span>
+            <button onClick={handleNext} className={styles.cardNavBtn}>
+              <span>Следующий</span> <ChevronRight size={18} />
+            </button>
           </div>
         </motion.article>
       </AnimatePresence>

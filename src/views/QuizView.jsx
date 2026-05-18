@@ -14,6 +14,7 @@ const QuizView = () => {
   const [score, setScore] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [count, setCount] = useState(10);
+  const [isTypesetting, setIsTypesetting] = useState(false);
 
   const startQuiz = () => {
     const shuffled = [...catalog.questions].sort(() => 0.5 - Math.random());
@@ -43,12 +44,20 @@ const QuizView = () => {
   };
 
   useEffect(() => {
-    if (window.MathJax) window.MathJax.typesetPromise();
+    if (window.MathJax) {
+      setIsTypesetting(true);
+      window.MathJax.typesetPromise()
+        .catch(err => console.error(err))
+        .finally(() => setIsTypesetting(false));
+    }
   }, [currentIndex, isFinished, isActive]);
 
   useEffect(() => {
     if (selectedOption !== null && window.MathJax) {
-      window.MathJax.typesetPromise();
+      setIsTypesetting(true);
+      window.MathJax.typesetPromise()
+        .catch(err => console.error(err))
+        .finally(() => setIsTypesetting(false));
     }
   }, [selectedOption]);
 
@@ -126,7 +135,7 @@ const QuizView = () => {
         <div className={styles.imageWrap}>
           <img src={q.image} alt="Вопрос" />
         </div>
-        <div className={styles.body}>
+        <div className={`${styles.body} ${isTypesetting ? styles.typesetting : ''}`}>
           {q.questionText && <div className={styles.questionText} dangerouslySetInnerHTML={renderMarkdown(q.questionText)} />}
           
           <div className={styles.options}>

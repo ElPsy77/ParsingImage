@@ -92,7 +92,14 @@
   img { max-height: 250px; object-fit: contain; }
 }
 
-.body { padding: 2rem; }
+.body { 
+  padding: 2rem;
+  transition: opacity 0.2s ease-in-out;
+  
+  &.typesetting {
+    opacity: 0;
+  }
+}
 
 .questionText { font-size: 1.15rem; font-weight: 700; margin-bottom: 2rem; }
 
