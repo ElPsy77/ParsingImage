@@ -27,9 +27,22 @@ const StudyView = () => {
   useEffect(() => {
     if (currentQuestion) {
       markViewed(currentQuestion.id);
-      setLastIndex(currentQuestion.id);
+      // Only set last index if it's different to avoid redundant state updates
+      if (progress.lastIndex !== currentQuestion.id) {
+        setLastIndex(currentQuestion.id);
+      }
     }
-  }, [currentQuestion]);
+  }, [currentQuestion?.id]);
+
+  // Sync currentIndex when progress.lastIndex changes (e.g. clicked from Catalog)
+  useEffect(() => {
+    if (progress.lastIndex && filteredQuestions.length > 0) {
+      const idx = filteredQuestions.findIndex(q => q.id === progress.lastIndex);
+      if (idx >= 0 && idx !== currentIndex) {
+        setCurrentIndex(idx);
+      }
+    }
+  }, [progress.lastIndex, filteredQuestions.length]);
 
   const handleNext = () => setCurrentIndex(prev => (prev + 1) % filteredQuestions.length);
   const handlePrev = () => setCurrentIndex(prev => (prev - 1 + filteredQuestions.length) % filteredQuestions.length);
@@ -40,9 +53,13 @@ const StudyView = () => {
     setSelectedOption(null);
     if (window.MathJax) {
       setIsTypesetting(true);
-      window.MathJax.typesetPromise()
-        .catch(err => console.error(err))
-        .finally(() => setIsTypesetting(false));
+      // Wait for Framer Motion exit transition to complete and new card to mount in the DOM
+      const timer = setTimeout(() => {
+        window.MathJax.typesetPromise()
+          .catch(err => console.error(err))
+          .finally(() => setIsTypesetting(false));
+      }, 300);
+      return () => clearTimeout(timer);
     }
   }, [currentQuestion?.id]);
 
