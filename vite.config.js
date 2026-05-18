@@ -15,9 +15,6 @@ export default defineConfig({
     }
   },
   server: {
-    port: 8787,
-    proxy: {
-      '/api': 'http://localhost:3000'
-    }
+    port: 8787
   }
 });

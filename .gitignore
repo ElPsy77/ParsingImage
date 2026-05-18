@@ -2,3 +2,5 @@ extracted/
 .DS_Store
 *.docx
 .env
+node_modules/
+dist/

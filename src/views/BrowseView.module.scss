@@ -37,6 +37,7 @@
 
   .search {
     width: 100%;
+    box-sizing: border-box;
     background: var(--bg);
     border: 1px solid var(--border);
     padding: 0.75rem 1rem 0.75rem 3rem;
@@ -61,6 +62,7 @@
 
   .select {
     flex: 1;
+    box-sizing: border-box;
     background: var(--bg);
     border: 1px solid var(--border);
     padding: 0.75rem;
