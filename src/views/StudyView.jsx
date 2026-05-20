@@ -22,7 +22,7 @@ const StudyView = () => {
   const [aiNotice, setAiNotice] = useState(null);
   
   const scheduleTypeset = (attempt = 0) => {
-    if (!window.MathJax) {
+    if (!window.MathJax || typeof window.MathJax.typesetPromise !== 'function') {
       if (attempt < 10) {
         setTimeout(() => scheduleTypeset(attempt + 1), 120);
       }
@@ -35,7 +35,7 @@ const StudyView = () => {
       .finally(() => setIsTypesetting(false));
   };
 
-  // Apply filters
+  // Apply filters - optimized dependency array to avoid loops when marking viewed
   const filteredQuestions = React.useMemo(() => {
     return catalog.questions.filter(q => {
       const topicMatch = topicFilter === 'all' || q.topicId === topicFilter;
@@ -45,7 +45,14 @@ const StudyView = () => {
         (statusFilter === 'known' && progress.known.includes(q.id));
       return topicMatch && statusMatch;
     });
-  }, [catalog.questions, topicFilter, statusFilter, progress.viewed, progress.starred, progress.known]);
+  }, [
+    catalog.questions, 
+    topicFilter, 
+    statusFilter, 
+    statusFilter === 'unviewed' ? progress.viewed : null, 
+    statusFilter === 'starred' ? progress.starred : null, 
+    statusFilter === 'known' ? progress.known : null
+  ]);
 
   const currentQuestion = filteredQuestions[currentIndex];
 
@@ -66,12 +73,12 @@ const StudyView = () => {
       const qAtCurrent = filteredQuestions[currentIndex];
       if (!qAtCurrent || qAtCurrent.id !== progress.lastIndex) {
         const idxByLast = filteredQuestions.findIndex(q => q.id === progress.lastIndex);
-        if (idxByLast >= 0) {
+        if (idxByLast >= 0 && idxByLast !== currentIndex) {
           setCurrentIndex(idxByLast);
         }
       }
     }
-  }, [filteredQuestions, progress.lastIndex]);
+  }, [filteredQuestions, progress.lastIndex]); // currentIndex removed from deps to prevent loops
 
   // Mark viewed and update lastIndex - separate from navigation logic
   useEffect(() => {

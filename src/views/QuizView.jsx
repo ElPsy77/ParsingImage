@@ -20,7 +20,7 @@ const QuizView = () => {
   const [aiNotice, setAiNotice] = useState(null);
   
   const scheduleTypeset = (attempt = 0) => {
-    if (!window.MathJax) {
+    if (!window.MathJax || typeof window.MathJax.typesetPromise !== 'function') {
       if (attempt < 10) {
         setTimeout(() => scheduleTypeset(attempt + 1), 120);
       }
