@@ -92,6 +92,12 @@ const StudyView = () => {
 
   const [selectedOption, setSelectedOption] = useState(null);
 
+  const resetFilters = () => {
+    setTopicFilter('all');
+    setStatusFilter('all');
+    setCurrentIndex(0);
+  };
+
   useEffect(() => {
     setSelectedOption(null);
     setAiNotice(null);
@@ -111,7 +117,14 @@ const StudyView = () => {
   }, [selectedOption]);
 
   if (!currentQuestion) {
-    return <div className={styles.empty}>Вопросы не найдены с текущими фильтрами.</div>;
+    return (
+      <div className={styles.empty}>
+        <p>Вопросы не найдены с текущими фильтрами.</p>
+        <button onClick={resetFilters} className={styles.resetBtn}>
+          Сбросить фильтры
+        </button>
+      </div>
+    );
   }
 
   const renderMarkdown = (text) => {
