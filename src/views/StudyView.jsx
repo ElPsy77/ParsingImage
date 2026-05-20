@@ -94,10 +94,15 @@ const StudyView = () => {
 
   useEffect(() => {
     setSelectedOption(null);
+    setAiNotice(null);
     // Wait for card transition + handle delayed MathJax script load
     const timer = setTimeout(() => scheduleTypeset(), 300);
     return () => clearTimeout(timer);
   }, [currentQuestion?.id]);
+
+  useEffect(() => {
+    setAiNotice(null);
+  }, [selectedAi]);
 
   useEffect(() => {
     if (selectedOption !== null) {

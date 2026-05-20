@@ -55,10 +55,15 @@ const QuizView = () => {
     if (currentIndex + 1 < quizQueue.length) {
       setCurrentIndex(prev => prev + 1);
       setSelectedOption(null);
+      setAiNotice(null);
     } else {
       setIsFinished(true);
     }
   };
+
+  useEffect(() => {
+    setAiNotice(null);
+  }, [selectedAi]);
 
   useEffect(() => {
     scheduleTypeset();
