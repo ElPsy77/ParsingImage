@@ -45,7 +45,11 @@ export const AppProvider = ({ children }) => {
   });
   const [loading, setLoading] = useState(true);
   const [currentView, setCurrentView] = useState('study');
-  const progress = { ...defaultProgress, ...(progressBySubject[activeSubject] || {}) };
+  
+  const progress = React.useMemo(() => ({
+    ...defaultProgress,
+    ...(progressBySubject[activeSubject] || {})
+  }), [progressBySubject, activeSubject]);
 
   useEffect(() => {
     const currentSubject = SUBJECTS.find(s => s.id === activeSubject) || SUBJECTS[0];
@@ -112,21 +116,23 @@ export const AppProvider = ({ children }) => {
     updateCurrentProgress(prev => ({ ...prev, lastIndex: id }));
   };
 
+  const contextValue = React.useMemo(() => ({
+    catalog,
+    progress,
+    loading,
+    currentView,
+    setCurrentView,
+    toggleStar,
+    toggleKnown,
+    markViewed,
+    setLastIndex,
+    subjects: SUBJECTS,
+    activeSubject,
+    setActiveSubject
+  }), [catalog, progress, loading, currentView, activeSubject]);
+
   return (
-    <AppContext.Provider value={{
-      catalog,
-      progress,
-      loading,
-      currentView,
-      setCurrentView,
-      toggleStar,
-      toggleKnown,
-      markViewed,
-      setLastIndex,
-      subjects: SUBJECTS,
-      activeSubject,
-      setActiveSubject
-    }}>
+    <AppContext.Provider value={contextValue}>
       {children}
     </AppContext.Provider>
   );

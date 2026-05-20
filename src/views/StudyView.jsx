@@ -36,46 +36,56 @@ const StudyView = () => {
   };
 
   // Apply filters
-  const filteredQuestions = catalog.questions.filter(q => {
-    const topicMatch = topicFilter === 'all' || q.topicId === topicFilter;
-    const statusMatch = statusFilter === 'all' || 
-      (statusFilter === 'unviewed' && !progress.viewed.includes(q.id)) ||
-      (statusFilter === 'starred' && progress.starred.includes(q.id)) ||
-      (statusFilter === 'known' && progress.known.includes(q.id));
-    return topicMatch && statusMatch;
-  });
+  const filteredQuestions = React.useMemo(() => {
+    return catalog.questions.filter(q => {
+      const topicMatch = topicFilter === 'all' || q.topicId === topicFilter;
+      const statusMatch = statusFilter === 'all' || 
+        (statusFilter === 'unviewed' && !progress.viewed.includes(q.id)) ||
+        (statusFilter === 'starred' && progress.starred.includes(q.id)) ||
+        (statusFilter === 'known' && progress.known.includes(q.id));
+      return topicMatch && statusMatch;
+    });
+  }, [catalog.questions, topicFilter, statusFilter, progress.viewed, progress.starred, progress.known]);
 
   const currentQuestion = filteredQuestions[currentIndex];
 
+  // Sync currentIndex with filteredQuestions and progress.lastIndex
   useEffect(() => {
     if (filteredQuestions.length === 0) {
-      setCurrentIndex(0);
+      if (currentIndex !== 0) setCurrentIndex(0);
       return;
     }
 
     if (currentIndex >= filteredQuestions.length) {
       setCurrentIndex(0);
+      return;
     }
-  }, [filteredQuestions.length, currentIndex]);
 
-  // Sync with catalog questions once they load initially
-  useEffect(() => {
-    if (catalog.questions.length > 0 && progress.lastIndex) {
-      const idx = catalog.questions.findIndex(q => q.id === progress.lastIndex);
-      if (idx >= 0) {
-        setCurrentIndex(idx);
+    // Try to find the last viewed question in the current filtered list
+    if (progress.lastIndex) {
+      const qAtCurrent = filteredQuestions[currentIndex];
+      if (!qAtCurrent || qAtCurrent.id !== progress.lastIndex) {
+        const idxByLast = filteredQuestions.findIndex(q => q.id === progress.lastIndex);
+        if (idxByLast >= 0) {
+          setCurrentIndex(idxByLast);
+        }
       }
     }
-  }, [catalog.questions, progress.lastIndex]);
+  }, [filteredQuestions, progress.lastIndex]);
 
+  // Mark viewed and update lastIndex - separate from navigation logic
   useEffect(() => {
-    if (currentQuestion) {
-      markViewed(currentQuestion.id);
+    if (currentQuestion?.id) {
+      // Avoid automatic marking if it would cause the question to disappear immediately (loop)
+      if (statusFilter !== 'unviewed') {
+        markViewed(currentQuestion.id);
+      }
+      
       if (progress.lastIndex !== currentQuestion.id) {
         setLastIndex(currentQuestion.id);
       }
     }
-  }, [currentQuestion?.id]);
+  }, [currentQuestion?.id, statusFilter]);
 
   const handleNext = () => setCurrentIndex(prev => (prev + 1) % filteredQuestions.length);
   const handlePrev = () => setCurrentIndex(prev => (prev - 1 + filteredQuestions.length) % filteredQuestions.length);
