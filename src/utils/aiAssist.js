@@ -1,7 +1,7 @@
 export const AI_PROVIDERS = [
-  { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com/' },
-  { id: 'gemini', label: 'Gemini', url: 'https://gemini.google.com/app' },
-  { id: 'claude', label: 'Claude', url: 'https://claude.ai/new' }
+  { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com/', scheme: 'chatgpt://' },
+  { id: 'gemini', label: 'Gemini', url: 'https://gemini.google.com/app', scheme: 'google-gemini://' },
+  { id: 'claude', label: 'Claude', url: 'https://claude.ai/new', scheme: 'claude://' }
 ];
 
 export const buildAiPrompt = (question, topicName = '') => {
@@ -31,7 +31,10 @@ export const buildAiPrompt = (question, topicName = '') => {
 
 export const askAi = async ({ providerId, prompt }) => {
   const provider = AI_PROVIDERS.find(p => p.id === providerId) || AI_PROVIDERS[0];
-  const url = provider.url; // Use base URL to avoid HTTP 431 Request Header Fields Too Large
+  
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  const url = (isMobile && provider.scheme) ? provider.scheme : provider.url;
+  
   let copied = false;
 
   try {

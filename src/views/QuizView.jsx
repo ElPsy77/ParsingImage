@@ -215,13 +215,14 @@ const QuizView = () => {
                         ? 'Промпт скопирован. Вставьте в чат (Cmd/Ctrl + V).'
                         : 'Не удалось скопировать автоматически. Скопируйте промпт вручную.'}
                     </span>
-                    <button
-                      type="button"
+                    <a
+                      href={aiNotice.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={styles.aiOpenButton}
-                      onClick={() => window.open(aiNotice.url, '_blank', 'noopener,noreferrer')}
                     >
                       Открыть {aiNotice.providerLabel}
-                    </button>
+                    </a>
                   </div>
                 )}
                 <div className={styles.explanation} dangerouslySetInnerHTML={renderMarkdown(q.explanation)} />
