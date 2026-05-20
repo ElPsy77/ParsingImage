@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useApp } from './context/AppContext';
 import { BookOpen, FolderSearch, Trophy, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,14 +10,25 @@ import BrowseView from './views/BrowseView';
 import QuizView from './views/QuizView';
 
 const App = () => {
-  const { currentView, setCurrentView, loading } = useApp();
-  const [theme, setTheme] = useState(() => localStorage.getItem('matanaliz-theme') || 'light');
+  const { currentView, setCurrentView, loading, subjects, activeSubject, setActiveSubject } = useApp();
+  const [theme, setTheme] = useState(() => {
+    const saved = localStorage.getItem('matanaliz-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    return 'dark';
+  });
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    localStorage.setItem('matanaliz-theme', theme);
+  }, [theme]);
 
   const toggleTheme = () => {
-    const next = theme === 'light' ? 'dark' : 'light';
-    setTheme(next);
-    document.documentElement.dataset.theme = next;
-    localStorage.setItem('matanaliz-theme', next);
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
   };
 
   if (loading) {
@@ -33,7 +44,16 @@ const App = () => {
     <div className={styles.container}>
       <header className={styles.header}>
         <div className={styles.logo}>
-          <h1>Матан — база</h1>
+          <h1>Prep Platform</h1>
+          <select
+            value={activeSubject}
+            onChange={(e) => setActiveSubject(e.target.value)}
+            className={styles.subjectSelect}
+          >
+            {subjects.map(subject => (
+              <option key={subject.id} value={subject.id}>{subject.name}</option>
+            ))}
+          </select>
         </div>
         <button onClick={toggleTheme} className={styles.themeToggle}>
           {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}

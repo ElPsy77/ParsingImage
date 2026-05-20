@@ -1,0 +1,1771 @@
+{
+  "total": 108,
+  "topics": [
+    {
+      "id": "all",
+      "name": "Все темы"
+    },
+    {
+      "id": "classical_probability",
+      "name": "Классическая вероятность"
+    },
+    {
+      "id": "combinatorics",
+      "name": "Комбинаторика"
+    },
+    {
+      "id": "conditional_probability",
+      "name": "Условная вероятность"
+    },
+    {
+      "id": "independence",
+      "name": "Независимость событий"
+    },
+    {
+      "id": "independent_events",
+      "name": "Независимые события"
+    },
+    {
+      "id": "probability_basics",
+      "name": "Основы вероятности"
+    },
+    {
+      "id": "probability_theorems",
+      "name": "Теоремы вероятности"
+    },
+    {
+      "id": "relative_frequency",
+      "name": "Относительная частота"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "questionText": "The number of all possible permutations",
+      "options": [
+        "$P_n = n!$",
+        "$P_n = \\frac{n!}{m!}$",
+        "$P_n = \\frac{n!}{m!(n-m)!}$",
+        "$P_n = \\frac{n!}{(n-m)!}$",
+        "$P_n = (n+1)!$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 2,
+      "questionText": "How many two-place numbers can be made of the digits 1, 4, 5 and 7 if each digit is included into the image of a number only once?",
+      "options": [
+        "24",
+        "12",
+        "16",
+        "3",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 3,
+      "questionText": "The number of all possible allocations",
+      "options": [
+        "$A_n^m = \\frac{n!}{(n-m)!}$",
+        "$A_n^m = \\frac{n!}{m!(n-m)!}$",
+        "$A_n^m = n - m!$",
+        "$A_n^m = m - n!$",
+        "$A_n^m = 1$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 4,
+      "questionText": "The number of all possible combinations",
+      "options": [
+        "$C_n^m = \\frac{n!}{m!(n-m)!}$",
+        "$C_n^m = \\frac{n!}{(n-m)!}$",
+        "$C_n^m = \\frac{m!}{n!}$",
+        "$C_n^m = \\frac{n!}{m!}$",
+        "$C_n^m = n!$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 5,
+      "questionText": "How many ways are there to choose 2 details from a box containing 9 details?",
+      "options": [
+        "12",
+        "4",
+        "22",
+        "11",
+        "36"
+      ],
+      "correctOptionIndex": 4,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 6,
+      "questionText": "If some object A can be chosen from the set of objects by m ways, and another object B can be chosen by n ways, then we can choose either A or B by … ways.",
+      "options": [
+        "m+n",
+        "m-n",
+        "n-m",
+        "n!",
+        "$C_n^m$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 7,
+      "questionText": "Events are equally possible if …",
+      "options": [
+        "none of them will necessarily happen as a result of a trial",
+        "there is reason to consider that none of them is more possible (probable) than other",
+        "there is reason to consider that one of them is more possible (probable) than other",
+        "at least one of them will necessarily happen as a result of a trial",
+        "one of them will necessarily happen as a result of a trial"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 8,
+      "questionText": "The probability of the event A is determined by the formula",
+      "options": [
+        "$P(A) = \\frac{|A|}{|\\Omega|}$, where $\\Omega$ is the space of elementary outcomes (ratio |A|/|Ω|)",
+        "$P(A|B) = \\frac{|B|}{|A|}$, where $\\Omega$ is the space of elementary outcomes",
+        "$P(A) = \\frac{|A|}{|\\Omega|}$, where $\\Omega$ is the space of elementary outcomes",
+        "$P(A) = \\frac{\\lambda^m}{m!}e^{-\\lambda}$, where $\\lambda$ is the space of elementary outcomes",
+        "$P(B|A) = \\frac{\\lambda^m}{m!}$, where $\\Omega$ is the space of elementary outcomes"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 9,
+      "questionText": "The probability of a reliable event is equal to …",
+      "options": [
+        "1",
+        "0",
+        "1/2",
+        "1/3",
+        "1/5"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 10,
+      "questionText": "The probability of an impossible event is equal to …",
+      "options": [
+        "0",
+        "1",
+        "1/2",
+        "1/3",
+        "1/5"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 11,
+      "questionText": "The probability of a random event is …",
+      "options": [
+        "the positive number between 0 and 1",
+        "the positive number between 0 and 1/2",
+        "the positive number between 0 and 10",
+        "the positive number between 0 and 1/3",
+        "the positive number between 0 and 1/5"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 12,
+      "questionText": "There are 100 identical details (and 20 of them are painted) in a box. Find the probability that the first randomly taken detail will be painted.",
+      "options": [
+        "1/20",
+        "1/5",
+        "1/2",
+        "1/10",
+        "1/9"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 13,
+      "questionText": "A die is tossed. Find the probability that an even number of aces will appear.",
+      "options": [
+        "1/2",
+        "1",
+        "0",
+        "1/5",
+        "1/9"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 14,
+      "questionText": "Participants of a toss-up pull a ticket with numbers from 1 up to 30 from a box. Find the probability that the number of the first randomly taken ticket contains the digit 2.",
+      "options": [
+        "1/30",
+        "1/3",
+        "1/2",
+        "2/5",
+        "1/5"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 15,
+      "questionText": "In a batch of 8 details the quality department has found out 3 non-standard details. What is the probability of appearance of non-standard details equal to?",
+      "options": [
+        "1/2",
+        "1",
+        "3/11",
+        "3/8",
+        "3/5"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 16,
+      "questionText": "At shooting by a rifle the relative frequency of hit in a target has appeared equal to 0.4. Find the number of hits if 20 shots were made.",
+      "options": [
+        "8",
+        "3",
+        "20",
+        "1",
+        "6"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "relative_frequency",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 17,
+      "questionText": "Two dice are tossed. Find the probability that different number of aces will appear on dices.",
+      "options": [
+        "1/6",
+        "5/6",
+        "1/2",
+        "1/3",
+        "1"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 18,
+      "questionText": "Two dice are tossed. Find the probability that the sum of aces will exceed 10.",
+      "options": [
+        "1/12",
+        "5/12",
+        "5/18",
+        "1/18",
+        "0"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 19,
+      "questionText": "An urn contains 15 balls: 4 white, 6 black and 5 red. Find the probability that a randomly taken ball will be red or white.",
+      "options": [
+        "3/7",
+        "4/15",
+        "3/5",
+        "6/15",
+        "1"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 20,
+      "questionText": "12 seeds have germinated of 60 planted seeds. Find the relative frequency of germination of seeds.",
+      "options": [
+        "1/5",
+        "4/5",
+        "1/60",
+        "1/12",
+        "1"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "relative_frequency",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 21,
+      "questionText": "A coin is tossed twice. Find the probability that the coin lands on tails in both times.",
+      "options": [
+        "1/4",
+        "3/4",
+        "1/3",
+        "1/2",
+        "0"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 22,
+      "questionText": "There are 200 details in a box. It is known that 150 of them are details of the first kind, 10 – the second kind, and the rest – the third kind. How many ways of extracting a detail of the first or the third kind from the box are there?",
+      "options": [
+        "190",
+        "10",
+        "40",
+        "200",
+        "150"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 23,
+      "questionText": "If an object A can be chosen from the set of objects by m ways and after every such choice an object B can be chosen by n ways then the pair of the objects (A, B) in this order can be chosen by ... ways.",
+      "options": [
+        "mn",
+        "m+n",
+        "n-m",
+        "n!",
+        "N"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 24,
+      "questionText": "5 of 20 students have sport categories. What is the probability that 3 randomly chosen students have sport categories?",
+      "options": [
+        "1/114",
+        "3/5",
+        "1/10",
+        "1/57",
+        "1/1218"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 25,
+      "questionText": "A box contains 5 red, 6 green and 4 blue pencils. 3 pencils are randomly extracted from the box. Find the probability that all the extracted pencils are different color.",
+      "options": [
+        "4/19",
+        "15/91",
+        "24/91",
+        "3/19",
+        "3/91"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 26,
+      "questionText": "It has been sold 12 of 15 refrigerators of three marks available in quantities of 5, 7 and 3 units in a shop. Assuming that the probability to be sold for a refrigerator of each mark is the same, find the probability that refrigerators of one mark have been unsold.",
+      "options": [
+        "0.101",
+        "0.016",
+        "0.984",
+        "0.53",
+        "0.8"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 27,
+      "questionText": "The probability of appearance of any of two incompatible events is equal to:",
+      "options": [
+        "$P(A+B) = P(A) + P(B)$",
+        "$P(A+B) = P(A) - P(B)$",
+        "$P(A+B) = P(A)P(B)$",
+        "$P(AB) = P(A) + P(B)$",
+        "$P(A) = P(A+B)$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_theorems",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 28,
+      "questionText": "There are 20 balls in an urn: 3 red, 2 blue and 15 white. Find the probability of appearance of a color (red or blue) ball.",
+      "options": [
+        "1/4",
+        "1",
+        "3/4",
+        "1/20",
+        "1/15"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 29,
+      "questionText": "A shooter shoots in a target subdivided into three areas. The probability of hit in the first area is 0.5 and in the second – 0.3. Find the probability that the shooter will hit at one shot either in the second area or in the third area.",
+      "options": [
+        "0.5",
+        "0.9",
+        "1",
+        "0.7",
+        "0.8"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_theorems",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 30,
+      "questionText": "The sum of the probabilities of events $A_1, A_2, \\ldots, A_n$ which form a sample space is equal to …",
+      "options": [
+        "1",
+        "0",
+        "1/2",
+        "1/5",
+        "1/3"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 31,
+      "questionText": "A consulting point of an institute receives packages with control works from the cities A, B and C. The probability of receiving a package from the city A is equal 0.2; from the city B – 0.2. Find the probability that next package will be received from the city C.",
+      "options": [
+        "0.5",
+        "0.9",
+        "0.6",
+        "0.8",
+        "1"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 32,
+      "questionText": "Two uniquely possible events forming a complete group are …",
+      "options": [
+        "Opposite",
+        "Same",
+        "Identically distributed",
+        "Sample",
+        "Density function"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 33,
+      "questionText": "The probability that a day will be rainy is p = 0.75. Find the probability that a day will be clear.",
+      "options": [
+        "0.25",
+        "0.3",
+        "0.15",
+        "0.75",
+        "1"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 34,
+      "questionText": "The conditional probability of an event A with the condition that an event B has already happened is equal to:",
+      "options": [
+        "$P(A|B) = \\frac{P(AB)}{P(B)}$",
+        "$P(A|B) = \\frac{P(AB)}{P(A)}$",
+        "$P(A|B) = \\frac{P(A)}{P(B)}$",
+        "$P(A|B) = \\frac{P(B)}{P(A)}$",
+        "$P(A|B) = \\frac{P(B)}{P(AB)}$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 35,
+      "questionText": "There are 4 conic and 8 elliptic cylinders at a collector. The collector has taken one cylinder, and then he has taken the second cylinder. Find the conditional probability that the second taken cylinder is elliptic given that the first was conic.",
+      "options": [
+        "8/11",
+        "1/4",
+        "8/33",
+        "1/2",
+        "2/3"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 36,
+      "questionText": "There are 4 white, 5 black and 6 blue balls in an urn. Each trial consists in extracting at random one ball without replacement. Find the probability that a white ball will appear at the first trial (event A), a black ball at the second trial (event B), and a blue ball at the third trial (event C).",
+      "options": [
+        "1/22",
+        "4/91",
+        "1/8",
+        "8/225",
+        "1/2"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 37,
+      "questionText": "The events A, B, C and D form a complete group. The probabilities of the events are: P(A) = 0.1; P(B) = 0.49; P(C) = 0.3. What is the probability of the event D equal to?",
+      "options": [
+        "0.11",
+        "0.5",
+        "0.2",
+        "0.4",
+        "0.1"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 38,
+      "questionText": "For independent events theorem of multiplication has the following form:",
+      "options": [
+        "$P(AB) = P(A)P(B)$",
+        "$P(AB) = P(A) + P(B)$",
+        "$P(AB) = \\frac{P(A)}{P(B)}$",
+        "$P(AB) = P(A) - P(B)$",
+        "$P(AB) = 1$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_theorems",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 39,
+      "questionText": "Find the probability of joint hit in a target by two guns if the probability of hit in the target by the first gun (event A) is equal to 0.3; and by the second gun (event B) – 0.5.",
+      "options": [
+        "0.35",
+        "0.15",
+        "0.2",
+        "0.8",
+        "0.5"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 40,
+      "questionText": "There are 3 flat-printing machines at typography. For each machine the probability that it works at the present time is equal to 0.6. Find the probability that at least one machine works at the present time.",
+      "options": [
+        "0.9714",
+        "0.256",
+        "0.36",
+        "0.784",
+        "0.936"
+      ],
+      "correctOptionIndex": 4,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 41,
+      "questionText": "Three students pass an exam. The probability that the exam will be passed on 'excellent' by the first student is equal to 0.5; by the second – 0.2; and by the third – 0.8. What is the probability that the exam will be passed on 'excellent' by only one student?",
+      "options": [
+        "0.42",
+        "0.48",
+        "0.92",
+        "0.28",
+        "0.99"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 42,
+      "questionText": "Three students pass an exam. The probability that the exam will be passed on 'excellent' by the first student is equal to 0.5; by the second – 0.3; and by the third – 0.7. What is the probability that the exam will be passed on 'excellent' by exactly two students?",
+      "options": [
+        "0.464",
+        "0.395",
+        "0.12",
+        "0.192",
+        "0.48"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 43,
+      "questionText": "Three students pass an exam. The probability that the exam will be passed on 'excellent' by the first student is equal to 0.3; by the second – 0.7; and by the third – 0.8. What is the probability that the exam will be passed on 'excellent' by at least one student?",
+      "options": [
+        "0.958",
+        "0.93",
+        "0.465",
+        "0.15",
+        "0.848"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 44,
+      "questionText": "Three students pass an exam. The probability that the exam will be passed on 'excellent' by the first student is equal to 0.3; by the second – 0.7; and by the third – 0.8. What is the probability that the exam will be passed on 'excellent' by neither of the students?",
+      "options": [
+        "0.042",
+        "0.95",
+        "0.46",
+        "0.07",
+        "0.84"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 45,
+      "questionText": "There are 5 details made by the factory №1 and 15 details of the factory №2 at a collector. Two details are randomly taken. Find the probability that at least one of them has been made by the factory №1.",
+      "options": [
+        "17/38",
+        "5/19",
+        "16/19",
+        "1/5",
+        "1/16"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 46,
+      "questionText": "There are 5 details made by the factory №1 and 15 details of the factory №2 at a collector. Two details are randomly taken. Find the probability that at least one of them has been made by the factory №2.",
+      "options": [
+        "18/19",
+        "5/19",
+        "16/19",
+        "1/5",
+        "1/16"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 47,
+      "questionText": "10 of 20 savings banks are located behind a city boundary. 4 savings banks are randomly selected for an inspection. What is the probability that among the selected banks appears inside the city 2 savings banks?",
+      "options": [
+        "0.418",
+        "0.07",
+        "0.5",
+        "0.6",
+        "0.23"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 48,
+      "questionText": "A problem in mathematics is given to three students whose chances of solving it are 2/3, 3/4, 2/5. What is the probability that the problem will not be solved?",
+      "options": [
+        "19/20",
+        "17/20",
+        "15/20",
+        "1/20",
+        "1"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 49,
+      "questionText": "An urn contains 10 balls: 3 red and 7 blue. A second urn contains 6 red balls and an unknown number of blue balls. A single ball is drawn from each urn. The probability that both balls are the same color is 0.54. Calculate the number of blue balls in the second urn.",
+      "options": [
+        "9",
+        "2",
+        "4",
+        "5",
+        "6"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 50,
+      "questionText": "The probability that a boy will not pass M.B.A. examination is 1/5 and that a girl will not pass is 3/5. Calculate the probability that at least one of them passes the examination.",
+      "options": [
+        "11/25",
+        "13/25",
+        "1/2",
+        "22/25",
+        "16/25"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 51,
+      "questionText": "The probability that a boy will not pass M.B.A. examination is 1/5 and that a girl will not pass is 3/5. Calculate the probability that exactly one of them passes the examination.",
+      "options": [
+        "11/25",
+        "22/25",
+        "1/2",
+        "14/25",
+        "16/25"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 52,
+      "questionText": "A bag contains 6 red discs and 4 blue discs. If 3 discs are drawn from the bag without replacement, find the conditional probability that all three will be blue given that one of them is blue.",
+      "options": [
+        "1/33",
+        "5/33",
+        "11/16",
+        "4/165",
+        "1/3"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 53,
+      "questionText": "A bag contains 4 white, 6 red and 10 black balls. Four balls are drawn one by one with replacement, what is the probability that at least one is white?",
+      "options": [
+        "$1 - \\left(\\frac{1}{4}\\right)^4$",
+        "$1 - \\left(\\frac{1}{5}\\right)^4$",
+        "$\\left(\\frac{1}{5}\\right)^4$",
+        "0.7182",
+        "$\\left(\\frac{1}{4}\\right)^4$"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 54,
+      "questionText": "Which of the following expressions indicates the occurrence of exactly one of the events A, B, C?",
+      "options": [
+        "$A + B + C$",
+        "$A \\cdot B \\cdot C$",
+        "$A \\cdot B^c \\cdot C^c + A^c \\cdot B \\cdot C^c + A^c \\cdot B^c \\cdot C$",
+        "$(A + B + C)^c$",
+        "$AB + AC + BC$"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 55,
+      "questionText": "A die is tossed. What is the probability that the die lands on 2?",
+      "options": [
+        "1/3",
+        "1/6",
+        "1/5",
+        "1/36",
+        "1/2"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 56,
+      "questionText": "Let A and B be events connected with the same trial. Show the event that means occurrence of at least one of the events A and B.",
+      "options": [
+        "$AB \\cup \\bar{A}B \\cup A\\bar{B}$",
+        "$\\bar{A} \\cup \\bar{B}$",
+        "$AB$",
+        "$\\bar{A} \\cup B \\cup AB$",
+        "$\\overline{AB}$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 57,
+      "questionText": "The events A and B are independent, P(A) = 0.3, P(B) = 0.1. Find $P(\\bar{A} \\cup \\bar{B})$.",
+      "options": [
+        "0.27",
+        "0.4",
+        "0.63",
+        "0.07",
+        "0.03"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 58,
+      "questionText": "There are 10 white, 15 black, 10 yellow, 25 red balls in a box. Find the probability that a randomly taken ball will be white.",
+      "options": [
+        "2/3",
+        "1/6",
+        "3/14",
+        "1/14",
+        "1/5"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 59,
+      "questionText": "Three coins are tossed. What is the probability that at least one of coins lands on 'heads'?",
+      "options": [
+        "1/4",
+        "7/8",
+        "1/6",
+        "1/5",
+        "1/9"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 60,
+      "questionText": "A coin is tossed. What is the probability that the coin lands on 'Tail'?",
+      "options": [
+        "1/2",
+        "1/4",
+        "1/3",
+        "1/7",
+        "1/9"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 61,
+      "questionText": "A coin is tossed. What is the probability that the coin lands on 'Head'?",
+      "options": [
+        "1/5",
+        "1/3",
+        "1/2",
+        "1",
+        "does not exist"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 62,
+      "questionText": "An urn contains 5 red, 3 white, 4 black balls. What is the probability of extracting a black ball?",
+      "options": [
+        "2.01",
+        "1.67",
+        "4.71",
+        "0.7",
+        "4.7"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 63,
+      "questionText": "An urn contains 3 red, 4 white, 5 black balls. What is the probability of extracting a black ball?",
+      "options": [
+        "5/12",
+        "5/11",
+        "1/12",
+        "2/23",
+        "5/16"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 64,
+      "questionText": "The probabilities of hit in a target at shooting by three guns are: p1 = 0.8; p2 = 0.7; p3 = 0.9. Find the probability of at least one hit at one shot by all three guns.",
+      "options": [
+        "0.555",
+        "0.187",
+        "0.176",
+        "0.994",
+        "0.165"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 65,
+      "questionText": "A student looks for one formula in three directories. The probability that the formula is contained in the first, second and third directories is equal to 0.6; 0.7; 0.8 respectively. Find the probability that the formula is contained only in one directory.",
+      "options": [
+        "0.657",
+        "0.546",
+        "0.765",
+        "0.188",
+        "0.024"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 66,
+      "questionText": "A student looks for one formula in three directories. The probability that the formula is contained in the first, second and third directories is equal to 0.6; 0.7; 0.8 respectively. Find the probability that the formula is contained in exactly two directories.",
+      "options": [
+        "0.765",
+        "0.857",
+        "0.452",
+        "0.867",
+        "0.863"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 67,
+      "questionText": "If a fair die is tossed twice, the probability that the first toss will be a number less than 3 and the second toss will be greater than 5 is",
+      "options": [
+        "1/3",
+        "5/18",
+        "1/18",
+        "3/18",
+        "0"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 68,
+      "questionText": "A class consists of 460 female and 540 male students. Passed: Female 400, Male 440. Did not pass: Female 60, Male 100. If one person is selected randomly, the probability that it did not pass given that it is female is:",
+      "options": [
+        "0.06",
+        "0.13",
+        "0.15",
+        "0.101",
+        "none of the shown answers"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 69,
+      "questionText": "How many different 3-letter arrangements can be formed using the letters in the word ABSENT, if each letter is used only once?",
+      "options": [
+        "6",
+        "36",
+        "120",
+        "46656",
+        "72"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 70,
+      "questionText": "If P(E) is the probability that an event will occur, which of the following must be FALSE?",
+      "options": [
+        "P(E) = 1",
+        "P(E) = 1/2",
+        "P(E) = 1/3",
+        "P(E) = -1/3",
+        "P(E) = 0"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 71,
+      "questionText": "A student looks for one formula in three directories. The probability that the formula is contained in the first, second and third directories is equal to 0.6; 0.7; 0.8 respectively. Find the probability that the formula is contained in all the directories.",
+      "options": [
+        "0.654",
+        "0.765",
+        "0.336",
+        "0.768",
+        "0.752"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 72,
+      "questionText": "A student looks for one formula in three directories. The probability that the formula is contained in the first, second and third directories is equal to 0.6; 0.7; 0.8 respectively. Find the probability that the formula is contained in exactly two directories.",
+      "options": [
+        "0.567",
+        "0.680",
+        "0.452",
+        "0.780",
+        "0.709"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 73,
+      "questionText": "How many different 6-letter arrangements can be formed using the letters in the word ABSENT, if each letter is used only once?",
+      "options": [
+        "6",
+        "36",
+        "720",
+        "46",
+        "1440"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 74,
+      "questionText": "Your state issues license plates consisting of letters and numbers. There are 26 letters and the letters may be repeated. There are 10 digits and the digits may be repeated. How many possible license plates can be issued with two letters followed by two numbers?",
+      "options": [
+        "2500",
+        "6760",
+        "25000",
+        "67600",
+        "2500"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 75,
+      "questionText": "A movie theatre sells 3 sizes of popcorn (small, medium, and large) with 3 choices of toppings (no butter, butter, extra butter). How many possible ways can a bag of popcorn be purchased?",
+      "options": [
+        "1",
+        "3",
+        "9",
+        "27",
+        "62"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 76,
+      "questionText": "Two events each have probability 0.3 of occurring and are independent. The probability that neither occur is",
+      "options": [
+        "0.49",
+        "0.51",
+        "0.3",
+        "0.6",
+        "none of the given answers"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 77,
+      "questionText": "A class consists of 490 female and 510 male students. Passed: Female 430, Male 410. Did not pass: Female 60, Male 100. If one person is selected randomly, what is the probability that it did not pass given that it is male?",
+      "options": [
+        "0.17",
+        "0.21",
+        "0.42",
+        "0.08",
+        "0.196"
+      ],
+      "correctOptionIndex": 4,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 78,
+      "questionText": "A student can solve 6 from a list of 10 problems. For an exam 8 questions are selected at random from the list. What is the probability that the student will solve exactly five problems?",
+      "options": [
+        "0.98",
+        "0.02",
+        "0.28",
+        "0.53",
+        "None of the shown answers"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 79,
+      "questionText": "Which of the following is the appropriate definition for the union of two events A and B?",
+      "options": [
+        "The set of all possible outcomes.",
+        "The set of all basic outcomes contained within both A and B.",
+        "The set of all basic outcomes in either A or B, or both.",
+        "None of the given answers",
+        "The set of all basic outcomes that are not in A and B."
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 80,
+      "questionText": "Johnson taught a music class for 20 students under the age of ten. He randomly chose one of them. What was the probability that the student was under eleven?",
+      "options": [
+        "1",
+        "0.5",
+        "1/25",
+        "0",
+        "0.25"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "probability_basics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 81,
+      "questionText": "A regular deck of 52 cards contains 4 different suits that each have 13 cards. If you randomly choose two cards from the deck, what is the probability that both cards will be Spades?",
+      "options": [
+        "1/17",
+        "2/17",
+        "1/4",
+        "4/17",
+        "33/68"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 82,
+      "questionText": "A standard deck of 52 cards contains 4 different suits that each have 13 cards. What is the probability of drawing a Diamond from a standard deck of 52 cards?",
+      "options": [
+        "1/52",
+        "13/39",
+        "1/13",
+        "1/4",
+        "1/2"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 83,
+      "questionText": "One card is randomly selected from a shuffled deck of 52 cards and then a die is rolled. Find the probability of obtaining an Ace and rolling an odd number.",
+      "options": [
+        "1/104",
+        "7/13",
+        "1/39",
+        "1/26",
+        "1/36"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 84,
+      "questionText": "If P(A) = 1/2 and P(B) = 1/2 then $P(A \\cap B) = $",
+      "options": [
+        "1/4, always",
+        "1/4, if A and B are independent",
+        "1/2, always",
+        "1/2, if A and B are independent",
+        "None of the given answers"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 85,
+      "questionText": "Suppose that P(A|B) = 3/5, P(B) = 2/7, and P(A) = 1/4. Determine P(B|A).",
+      "options": [
+        "24/75",
+        "24/35",
+        "6/35",
+        "12/75",
+        "None of the given answers"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 86,
+      "questionText": "There are ten sprinters in the finals of a race. How many different ways can the gold, silver and bronze medals be awarded?",
+      "options": [
+        "120",
+        "710",
+        "1440",
+        "100",
+        "60"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "combinatorics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 87,
+      "questionText": "A survey revealed: 28% watched gymnastics, 29% watched baseball, 19% watched soccer, 14% watched gymnastics and baseball, 12% watched baseball and soccer, 10% watched gymnastics and soccer, 8% watched all three sports. Calculate the percentage of the group that watched none of the three sports.",
+      "options": [
+        "24%",
+        "52%",
+        "41%",
+        "36%",
+        "20%"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "probability_theorems",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 88,
+      "questionText": "You are given $P[A \\cup B] = 0.7$ and $P[A \\cup B'] = 0.9$. Determine P[A].",
+      "options": [
+        "0.2",
+        "0.6",
+        "0.4",
+        "0.3",
+        "0.8"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "probability_theorems",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 89,
+      "questionText": "An electronic system contains three cooling components that operate independently. The probability of each component's failure is 0.05. The system will overheat if and only if at least two components fail. Calculate the probability that the system will overheat.",
+      "options": [
+        "0.045",
+        "0.098",
+        "0.007",
+        "0.135",
+        "0.143"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 90,
+      "questionText": "At a charity ball, 800 names are put into a hat. Four of the names are identical. On a random draw, what is the probability that one of these four names will be drawn?",
+      "options": [
+        "0.004",
+        "0.005",
+        "0.001",
+        "0.01",
+        "0.03"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 91,
+      "questionText": "Two events are said to be independent if the occurrence of one event:",
+      "options": [
+        "Means that the second event cannot occur",
+        "Does not affect the probability of the occurrence of the other event",
+        "Means that the second event is certain to occur",
+        "No right answer",
+        "Means that the first event is certain to occur"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "independent_events",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 92,
+      "questionText": "Event A occurs at least once in the 5 trials.",
+      "options": [
+        "$p^5$",
+        "$1 - (1-p)^5$",
+        "$(1-p)^5$",
+        "$1 - p^5$",
+        "None of the given answers is correct"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "probability_theorems",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 93,
+      "questionText": "A study of automobile accidents: Model year 1997→proportion 0.16, accident prob 0.05; 1998→0.18, 0.02; 1999→0.20, 0.03; Other→0.46, 0.04. An automobile from model years 1997, 1998, 1999 was involved in an accident. Determine the probability that the model year is 1997.",
+      "options": [
+        "0.22",
+        "0.45",
+        "0.30",
+        "0.33",
+        "0.50"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 94,
+      "questionText": "Given the following joint probability distribution table (X: -1, 1; Y: -1, 0, 1) with P(-1,-1)=1/8, P(1,-1)=1/2, P(-1,0)=0, P(1,0)=1/4, P(-1,1)=1/8, P(1,1)=0. Find E(Y|X=1).",
+      "options": [
+        "-1/3",
+        "-2/3",
+        "1/2",
+        "1/3",
+        "2/3"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 95,
+      "questionText": "Given the following joint probability distribution table (X: -1, 1; Y: -1, 0, 1) with P(-1,-1)=1/8, P(1,-1)=1/2, P(-1,0)=0, P(1,0)=1/4, P(-1,1)=1/8, P(1,1)=0. Find whether X and Y are independent.",
+      "options": [
+        "Dependent, as their product of marginal densities equal joint density for every possible pair (x,y)",
+        "Dependent, the product of the marginal densities does not equal the joint density for every possible pair (x,y)",
+        "Independent, as their product of marginal densities equal joint density for every possible pair (x,y)",
+        "Cannot determine",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "independence",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 96,
+      "questionText": "Let X and Y be continuous random variables with joint density function $f(x,y) = 2$ for $0 < x < y < 1$, 0 otherwise. Determine the conditional density function of Y given X=x, where 0 < x < 1.",
+      "options": [
+        "$2(1-x)$, $x < y < 1$",
+        "$\\frac{1}{1-x}$, $x < y < 1$",
+        "$2$, $x < y < 1$",
+        "$\\frac{1}{y}$, $x < y < 1$",
+        "$\\frac{1}{1-y}$, $x < y < 1$"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 97,
+      "questionText": "An urn contains 10 balls: 4 red and 6 blue. A second urn contains 16 red balls and an unknown number of blue balls. A single ball is drawn from each urn. The probability that both balls are the same color is 0.44. Calculate the number of blue balls in the second urn.",
+      "options": [
+        "44",
+        "4",
+        "16",
+        "20",
+        "24"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 98,
+      "questionText": "An insurance company: 70% insure more than one car, 20% insure a sports car, 15% of those who insure more than one car insure a sports car. What is the probability that a randomly selected customer insures exactly one car, and that car is not a sports car?",
+      "options": [
+        "0.200",
+        "0.205",
+        "0.131",
+        "0.250",
+        "0.300"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 99,
+      "questionText": "An insurance company: 64% insure more than one car, 20% insure a sports car, 15% of those who insure more than one car insure a sports car. What is the probability that a randomly selected customer insures exactly one car, and that car is not a sports car?",
+      "options": [
+        "0.200",
+        "0.256",
+        "0.131",
+        "0.205",
+        "0.300"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 100,
+      "questionText": "An auto insurance company statistics: Age 16-20→accident prob 0.06, portion 0.08; 21-30→0.03, 0.15; 31-65→0.02, 0.49; 66-99→0.04, 0.28. A randomly selected driver has an accident. Calculate the probability that the driver was age 16-20.",
+      "options": [
+        "0.13",
+        "0.16",
+        "0.19",
+        "0.23",
+        "0.40"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 101,
+      "questionText": "A bag contains blue and red balls. Two balls are drawn randomly without replacement. The probability of selecting a blue and then a red ball is 0.2. The probability of selecting a blue ball in the first draw is 0.5. What is the probability of drawing a red ball, given that the first ball drawn was blue?",
+      "options": [
+        "0.4",
+        "0.2",
+        "0.1",
+        "0.5",
+        "0.3"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 102,
+      "questionText": "A die is rolled thrice. What is the probability that the sum of the rolls is at least 5?",
+      "options": [
+        "212/216",
+        "216/216",
+        "1/6",
+        "3/216",
+        "6/216"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 103,
+      "questionText": "In a class, 40% of the students study math and science. 60% of the students study math. What is the probability of a student studying science given he/she is already studying math?",
+      "options": [
+        "0.67",
+        "0.40",
+        "0.60",
+        "0.33",
+        "0.50"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 104,
+      "questionText": "Suppose that the probability of event A is 0.2 and the probability of event B is 0.4. Also, suppose that the two events are independent. Then P(A|B) is:",
+      "options": [
+        "P(A) = 0.2",
+        "P(A)/P(B) = 1/2",
+        "P(A)P(B) = 0.08",
+        "None of the above",
+        "P(B) = 0.4"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "conditional_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 105,
+      "questionText": "Find the probability of selecting a black card or a 6 from a deck of 52 playing cards.",
+      "options": [
+        "7/13",
+        "26/52",
+        "4/52",
+        "13/52",
+        "36/52"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 106,
+      "questionText": "What is the probability of drawing a king and a queen consecutively from a deck of 52 cards, without replacement?",
+      "options": [
+        "4/663",
+        "1/13",
+        "4/51",
+        "12/2652",
+        "1/2652"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 107,
+      "questionText": "The fair dice is rolled. What is the probability of getting 5?",
+      "options": [
+        "1/6",
+        "2/6",
+        "6",
+        "1",
+        "3/6"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 108,
+      "questionText": "The fair coin was flipped twice. What is the probability of obtaining two heads?",
+      "options": [
+        "1/4",
+        "1/5",
+        "1/2",
+        "1/3",
+        "1"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "classical_probability",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    }
+  ]
+}

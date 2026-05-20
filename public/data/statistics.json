@@ -1,0 +1,1222 @@
+{
+  "total": 72,
+  "topics": [
+    {
+      "id": "all",
+      "name": "Все темы"
+    },
+    {
+      "id": "binomial_distribution",
+      "name": "Биномиальное распределение"
+    },
+    {
+      "id": "central_limit_theorem",
+      "name": "Центральная предельная теорема"
+    },
+    {
+      "id": "continuous_distributions",
+      "name": "Непрерывные распределения"
+    },
+    {
+      "id": "covariance",
+      "name": "Ковариация"
+    },
+    {
+      "id": "descriptive_statistics",
+      "name": "Описательная статистика"
+    },
+    {
+      "id": "discrete_distributions",
+      "name": "Дискретные распределения"
+    },
+    {
+      "id": "distribution_function",
+      "name": "Функция распределения"
+    },
+    {
+      "id": "expected_value",
+      "name": "Математическое ожидание"
+    },
+    {
+      "id": "geometric_distribution",
+      "name": "Геометрическое распределение"
+    },
+    {
+      "id": "mgf",
+      "name": "Производящая функция моментов"
+    },
+    {
+      "id": "normal_approximation",
+      "name": "Нормальная аппроксимация"
+    },
+    {
+      "id": "normal_distribution",
+      "name": "Нормальное распределение"
+    },
+    {
+      "id": "poisson_distribution",
+      "name": "Распределение Пуассона"
+    },
+    {
+      "id": "random_variables",
+      "name": "Случайные величины"
+    },
+    {
+      "id": "uniform_distribution",
+      "name": "Равномерное распределение"
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "questionText": "Three buyers went to a shop. The probability that each buyer makes purchases is equal to 0.8. Find the probability that two of them will make purchases.",
+      "options": [
+        "0.384",
+        "0.7",
+        "0.189",
+        "0.96",
+        "0.904"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 2,
+      "questionText": "Four buyers went in a shop. The probability that each buyer makes purchases is equal to 0.5. Find the probability that three of them will make purchases.",
+      "options": [
+        "0.25",
+        "0.096",
+        "0.95",
+        "0.125",
+        "0.712"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 3,
+      "questionText": "Four buyers went in a shop. The probability that each buyer makes purchases is equal to 0.8. Find the probability that only one of them will make purchases.",
+      "options": [
+        "0.0256",
+        "0.568",
+        "0.0441",
+        "0.064",
+        "0.144"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 4,
+      "questionText": "Find the formula of Binomial distribution",
+      "options": [
+        "$P_n(k) = \\frac{1}{\\sqrt{npq}} \\cdot \\varphi(x)$",
+        "$P_n(k) = C_n^k \\cdot p^k \\cdot (1-p)^{n-k}$",
+        "$P_n(k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}$",
+        "$P(B|A) = \\frac{P(B) \\cdot P(A|B)}{P(A)}$",
+        "$P_n(k) = \\frac{1}{\\sqrt{npq}} \\cdot e^{-2p(1-p)}$"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 5,
+      "questionText": "How would it change the expected value of a random variable X if we multiply the X by a number k?",
+      "options": [
+        "$M[kX] = k \\cdot M[X]$",
+        "$M[kX] = |k| \\cdot M[X]$",
+        "$M[kX] = M[X]$",
+        "$M[kX] = M[X] + k$",
+        "$M[kX] = k^2 \\cdot M[X]$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 6,
+      "questionText": "An integral function of distribution F(x) is:",
+      "options": [
+        "decreasing",
+        "periodic",
+        "non-decreasing",
+        "odd"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "distribution_function",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 7,
+      "questionText": "An integral function of distribution F(x) is:",
+      "options": [
+        "decreasing",
+        "non-decreasing",
+        "odd",
+        "even",
+        "periodic"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "distribution_function",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 8,
+      "questionText": "If all possible values of a random variable X belong to an interval (a,b) then the integral function of distribution F(x) for x < a is equal to:",
+      "options": [
+        "0",
+        "1",
+        "1/2",
+        "1/3",
+        "1/5"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "distribution_function",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 9,
+      "questionText": "The lifetime of a machine part has a continuous distribution on the interval (0, 20) with probability density function $f(x) = c(10+x)^{-2}$. Calculate the probability that the lifetime of the machine part is less than 6.",
+      "options": [
+        "0.04",
+        "0.15",
+        "0.56",
+        "0.53",
+        "0.94"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 10,
+      "questionText": "The lifetime of a machine part has a continuous distribution on the interval (0, 20) with probability density function $f(x) = c(10+x)^{-2}$. Calculate the probability that the lifetime of the machine part is less than 5.",
+      "options": [
+        "0.03",
+        "0.13",
+        "0.5",
+        "0.8",
+        "0.97"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 11,
+      "questionText": "What kind of distribution is given by the density function $f(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-\\mu)^2}{2\\sigma^2}}$, $-\\infty < x < \\infty$?",
+      "options": [
+        "Poisson distribution",
+        "Normal distribution",
+        "Uniform distribution",
+        "Bernoulli distribution",
+        "Exponential distribution"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 12,
+      "questionText": "Marks on a Chemistry test follow a normal distribution with an expectation of 65 and a mean square deviation of 12. Approximately what percentages of the students have scores below 50?",
+      "options": [
+        "11%",
+        "89%",
+        "15%",
+        "18%",
+        "39%"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 13,
+      "questionText": "Suppose the test scores of 10000 students are normally distributed with an expectation of 76 and mean square deviation of 8. The number of students scoring between 60 and 82 is:",
+      "options": [
+        "2728",
+        "1646",
+        "2605",
+        "1360",
+        "7506"
+      ],
+      "correctOptionIndex": 4,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 14,
+      "questionText": "If the probability density function of a continuous random variable X is $f(x) = x/8$ for $0 \\leq x \\leq 4$, 0 otherwise, then $P\\{0 \\leq x \\leq 1.5\\}$ is",
+      "options": [
+        "0.56",
+        "0.312",
+        "0.1875",
+        "0.4",
+        "0.1245"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 15,
+      "questionText": "Let X be a continuous random variable with density function $f(x) = |x|/10$ for $-2 \\leq x \\leq 4$, 0 otherwise. Calculate the expected value of X.",
+      "options": [
+        "1/5",
+        "3/5",
+        "1",
+        "28/15",
+        "12/15"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 16,
+      "questionText": "If the probability density function of a continuous random variable X is $f(x) = kx^2$ for $0 \\leq x \\leq 3$, 0 otherwise, then the value of k is",
+      "options": [
+        "1/2",
+        "0.25",
+        "1/9",
+        "0.3",
+        "Any positive value greater than 2"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 17,
+      "questionText": "A continuous random variable X is uniformly distributed over the interval [15, 21]. The expected value of X is M(X).",
+      "options": [
+        "16",
+        "18",
+        "10",
+        "3",
+        "6"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "uniform_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 18,
+      "questionText": "The probability that the expense of electric power during one day will not exceed the established norm is equal to p = 0.75. Find probability that at the closest 6 days the expense of electric power will not exceed the norm for 4 days.",
+      "options": [
+        "0.76",
+        "0.54",
+        "0.30",
+        "0.70",
+        "0.51"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 19,
+      "questionText": "A random variable Y has the following distribution: Y: -1, 0, 1, 2 with P(Y): C, 4C, 0.4, 0.1. The value of the constant C is:",
+      "options": [
+        "0.10",
+        "0.15",
+        "0.20",
+        "0.25",
+        "0.75"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "discrete_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 20,
+      "questionText": "Find the probability that an event A will happen exactly 80 times for 400 trials if the probability of appearance of the event for each trial equals 0.2. ($\\varphi(0) \\approx 0.3989$)",
+      "options": [
+        "0.9769",
+        "0.04986",
+        "0.6",
+        "0.2",
+        "1"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "normal_approximation",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 21,
+      "questionText": "Which one of these variables is a continuous random variable?",
+      "options": [
+        "The time it takes a randomly selected student to complete an exam.",
+        "The number of tattoos a randomly selected person has.",
+        "The number of women taller than 68 inches in a random sample of 5 women.",
+        "The number of correct guesses on a multiple-choice test.",
+        "The number of 1's in N rolls of a fair die"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "random_variables",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 22,
+      "questionText": "Heights of college women have a distribution that can be approximated by a normal curve with an expectation of 65 inches and a mean square deviation equal to 3 inches. About what proportion of college women are between 65 and 68 inches tall?",
+      "options": [
+        "0.75",
+        "0.5",
+        "0.34",
+        "0.17",
+        "0.25"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 23,
+      "questionText": "The probability of hit in a target by a shooter at one shoot is p = 0.75. Find the probability that the shooter will hit in the target 8 times at 10 shots.",
+      "options": [
+        "0.987",
+        "0.765",
+        "0.657",
+        "0.273",
+        "0.124"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 24,
+      "questionText": "Given a normal distribution with µ = 90 and σ = 10, what is the probability that X > 75?",
+      "options": [
+        "0.93",
+        "0.25",
+        "0.49",
+        "0.45",
+        "0.01"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 25,
+      "questionText": "For a continuous random variable X, the probability density function f(x) represents",
+      "options": [
+        "the probability at a fixed value of X",
+        "the area under the curve at X",
+        "the area under the curve to the right of X",
+        "the height of the function at X",
+        "the integral of the cumulative distribution function"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 26,
+      "questionText": "Suppose that 10% of people are left handed. If 6 people are selected at random, what is the probability that exactly 2 of them are left handed?",
+      "options": [
+        "0.031",
+        "0.053",
+        "0.098",
+        "0.0100",
+        "0.29"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 27,
+      "questionText": "Suppose a computer chip manufacturer rejects 15% of the chips produced because they fail presale testing. If you test 4 chips, what is the probability that not all of the chips fail?",
+      "options": [
+        "0.9995",
+        "0.00005",
+        "0.15",
+        "0.6",
+        "0.5220"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 28,
+      "questionText": "Which of these has a Geometric model?",
+      "options": [
+        "the number of aces in a five-card Poker hand",
+        "the number of people we survey",
+        "the number of people in a class of 25 who have taken Statistics",
+        "the number of people we survey until we find someone who has taken Statistics",
+        "the number of sodas students drink per day"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "geometric_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 29,
+      "questionText": "Suppose that the random variable T has the following probability distribution: T: 0, 1, 2 with P(T=t): 0.4, 0.4, 0.2. Find $P\\{t \\leq 0\\}$.",
+      "options": [
+        "0.8",
+        "0.4",
+        "0.3",
+        "0.2",
+        "0"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "discrete_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 30,
+      "questionText": "Which of the following is an example of a discrete random variable?",
+      "options": [
+        "The distance you can drive in a car with a full tank of gas.",
+        "The weight of a package at the post office.",
+        "The amount of rain that falls over a 24-hour period.",
+        "The number of cows on a cattle ranch.",
+        "The time that a train arrives at a specified stop."
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "random_variables",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 31,
+      "questionText": "The probability density function of a random variable X is given by $f(x) = \\frac{1}{\\sqrt{8\\pi}} e^{-\\frac{(x+1)^2}{8}}$. What are the values of µ and σ?",
+      "options": [
+        "$\\mu = 1, \\sigma = 4$",
+        "$\\mu = -1, \\sigma = 4$",
+        "$\\mu = -1, \\sigma = 2$",
+        "$\\mu = 1, \\sigma = 8$",
+        "$\\mu = 1, \\sigma = 2$"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 32,
+      "questionText": "The number of clients arriving each hour at a given branch of a bank follows a Poisson distribution with parameter λ = 4. The probability that in a given hour at most 2 clients arrive is:",
+      "options": [
+        "$2e^{-4}$",
+        "$3e^{-4}$",
+        "$6e^{-4}$",
+        "$8e^{-4}$",
+        "$8e^{-2}$"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "poisson_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 33,
+      "questionText": "Table shows the cumulative distribution function of a random variable X: X: 1, 2, 3, 4 with F(X): 1/8, 1/4, 3/4, 1. Determine $P(X \\geq 2)$.",
+      "options": [
+        "1/8",
+        "5/8",
+        "1/2",
+        "3/4",
+        "1/3"
+      ],
+      "correctOptionIndex": 3,
+      "topicId": "distribution_function",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 34,
+      "questionText": "The mathematical expectation and dispersion of a random variable X distributed under the binomial law are …, respectively.",
+      "options": [
+        "$EX = np, DX = npq$",
+        "$EX = npq, DX = np$",
+        "$EX = C_n^k np, DX = npq$",
+        "$EX = np, DX = C_n^k npq$",
+        "$EX = np, DX = \\lambda$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 35,
+      "questionText": "The probability distribution function of random variable $X \\sim Geom(p)$ is",
+      "options": [
+        "$P(X=m) = p q^{m-1}$",
+        "$P(X=m) = \\frac{\\lambda^m e^{-\\lambda}}{m!}$",
+        "$P(X=m) = \\frac{C_M^m C_{N-M}^{n-m}}{C_N^n}$",
+        "$P(X=m) = C_n^m p^m q^{n-m}$",
+        "$\\varphi_N(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-a)^2}{2\\sigma^2}}$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "geometric_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 36,
+      "questionText": "The mathematical expectation and dispersion of a random variable X having the geometrical distribution with the parameter p are …, respectively.",
+      "options": [
+        "$EX = \\frac{1}{p}, DX = \\frac{q}{p^2}$",
+        "$EX = npq, DX = np$",
+        "$EX = \\frac{1}{p}, DX = \\frac{p}{q^2}$",
+        "$EX = \\frac{q}{p}, DX = \\frac{q}{p^2}$",
+        "$EX = np, DX = \\lambda$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "geometric_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 37,
+      "questionText": "The Lakers scored the following numbers of goals in their last twenty matches: 3, 0, 1, 5, 4, 3, 2, 6, 4, 2, 3, 3, 0, 7, 1, 1, 2, 3, 4, 3. Which number had the highest frequency?",
+      "options": [
+        "4",
+        "3",
+        "6",
+        "7",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 38,
+      "questionText": "60 students sat a test. Frequency distribution: Mark 0→1, 1→3, 2→6, 3→9, 4→8, 5→11, 6→8, 7→7, 8→4, 9→1, 10→2. How many students scored 5 or more?",
+      "options": [
+        "11",
+        "33",
+        "22",
+        "38",
+        "25"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 39,
+      "questionText": "A fair die was thrown 100 times. Frequency distribution: Score 1→16, 2→18, 3→11, 4→15, 5→19, 6→21. How many throws scored greater than 2, but less than or equal to 5?",
+      "options": [
+        "26",
+        "45",
+        "44",
+        "63",
+        "52"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 40,
+      "questionText": "The children in a class did a survey of the number of siblings each of them had. Number of siblings→Frequency: 0→3, 1→6, 2→8, 3→5, 4→4, 5→2, 6→1, 7→0, 8→0, 9→1. How many families had more than 4 children?",
+      "options": [
+        "4",
+        "8",
+        "5",
+        "13",
+        "9"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 41,
+      "questionText": "Rachel rolled a die forty five times. Score→Frequency: 1→8, 2→11, 3→4, 4→8, 5→5, 6→9. What was her mean score?",
+      "options": [
+        "3.5",
+        "3.4",
+        "3.62",
+        "7.5",
+        "6.3"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 42,
+      "questionText": "Ramiro did a survey of the number of pets owned by his classmates. Number of pets→Frequency: 0→4, 1→12, 2→8, 3→2, 4→1, 5→2, 6→1. What was the mean number of pets?",
+      "options": [
+        "2.13",
+        "1.8",
+        "2.57",
+        "30",
+        "2"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 43,
+      "questionText": "A machine produces electrical components. 99.7% of the components have lengths between 1.176 cm and 1.224 cm. Assuming this data is normally distributed, what are the mean and standard deviation?",
+      "options": [
+        "E(X) = 1.210, std = 0.008",
+        "E(X) = 1.200, std = 0.008",
+        "E(X) = 1.120, std = 0.008",
+        "E(X) = 1.200, std = 0.004",
+        "E(X) = 1.1250, std = 0.004"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 44,
+      "questionText": "A booklet has 12 pages with the following numbers of words: 271, 354, 296, 301, 333, 326, 285, 298, 327, 316, 287 and 314. What is the median number of words per page?",
+      "options": [
+        "301",
+        "307.5",
+        "305.5",
+        "314",
+        "Cannot determine"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 45,
+      "questionText": "If a researcher wants to study a binomial population where p = 0.1, what is the minimum size n needed to make use of the central limit theorem?",
+      "options": [
+        "0",
+        "100",
+        "10",
+        "10000",
+        "1000"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "central_limit_theorem",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 46,
+      "questionText": "As a general rule, approximately what is the smallest sample size that can be safely drawn from a non-normal distribution of observations if someone wants to produce a normal sampling distribution of sample means?",
+      "options": [
+        "N=20",
+        "N=30",
+        "N=40",
+        "N=50",
+        "N=60"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "central_limit_theorem",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 47,
+      "questionText": "The number of days an employee is sick each month is modeled by a Poisson distribution with mean 1. Calculate the probability that an employee is sick more than two days in a three-month period.",
+      "options": [
+        "0.199",
+        "0.224",
+        "0.577",
+        "0.423",
+        "0.801"
+      ],
+      "correctOptionIndex": 2,
+      "topicId": "poisson_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 48,
+      "questionText": "What is the covariance between X and Y? Joint distribution: P(X=4, Y=3)=0.30, P(X=7, Y=3)=0.15, P(X=4, Y=5)=0.25, P(X=7, Y=5)=0.30.",
+      "options": [
+        "-0.9727",
+        "0.3150",
+        "1.4842",
+        "4.9224",
+        "3.5236"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "covariance",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 49,
+      "questionText": "What is the arithmetic mean for XYZ stock? Returns: 2003: 22%, 2004: 5%, 2005: -7%, 2006: 11%, 2007: 2%, 2008: 11%.",
+      "options": [
+        "8.0%",
+        "7.3%",
+        "9.0%",
+        "11%",
+        "7%"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 50,
+      "questionText": "What is the median return for XYZ stock? Returns: 2003: 22%, 2004: 5%, 2005: -7%, 2006: 11%, 2007: 2%, 2008: 11%.",
+      "options": [
+        "7.3%",
+        "8.0%",
+        "11%",
+        "10%",
+        "2%"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 51,
+      "questionText": "What is the mode of the returns for XYZ stock? Returns: 2003: 22%, 2004: 5%, 2005: -7%, 2006: 11%, 2007: 2%, 2008: 11%.",
+      "options": [
+        "22%",
+        "11%",
+        "5%",
+        "2%",
+        "10%"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "descriptive_statistics",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 52,
+      "questionText": "The mathematical expectation and dispersion of a random variable X having the uniform distribution on [a,b] are …, respectively.",
+      "options": [
+        "$EX = \\frac{a+b}{2}, Var(X) = \\frac{(b-a)^2}{12}$",
+        "$EX = \\frac{a-b}{2}, DX = \\frac{(b-a)^2}{12}$",
+        "$EX = \\frac{a+b}{2}, DX = \\frac{(b+a)^2}{12}$",
+        "$EX = \\frac{q}{p}, DX = \\frac{q}{p^2}$",
+        "$EX = \\frac{a+b}{2}, DX = \\frac{(b-a)^2}{15}$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "uniform_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 53,
+      "questionText": "For a continuous random variable X, the probability of any single value of X is:",
+      "options": [
+        "one",
+        "zero",
+        "determined by the CDF",
+        "depends on the function",
+        "None of the given answers"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 54,
+      "questionText": "Choose the probability distribution function of random variable $X \\sim Pois(\\lambda)$",
+      "options": [
+        "$P(X=m) = \\frac{\\lambda^m e^{-\\lambda}}{m!}$",
+        "$P(X=m) = \\frac{C_M^m C_{N-M}^{n-m}}{C_N^n}$",
+        "$P(X=m) = C_n^m p^m q^{n-m}$",
+        "$\\varphi_N(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-a)^2}{2\\sigma^2}}$",
+        "$\\varphi(x) = \\lambda e^{-\\lambda x}$ for $x \\geq 0$, 0 for $x < 0$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "poisson_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 55,
+      "questionText": "Choose the probability density function of random variable $X \\sim N(a, \\sigma^2)$",
+      "options": [
+        "$\\varphi_N(x) = \\frac{1}{\\sigma\\sqrt{2\\pi}} e^{-\\frac{(x-a)^2}{2\\sigma^2}}$",
+        "$\\varphi(x) = \\lambda e^{-\\lambda x}$ for $x \\geq 0$, 0 for $x < 0$",
+        "$\\varphi(x) = \\frac{1}{b-a}$ if $a \\leq x \\leq b$, 0 otherwise",
+        "$F(x) = 0$ for $x < 0$, $1 - e^{-\\lambda x}$ for $x \\geq 0$",
+        "$P(X=m) = C_n^m p^m q^{n-m}$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 56,
+      "questionText": "What is moment generating function?",
+      "options": [
+        "$M_X(t) = E(e^{-tx})$",
+        "$M_X(t) = E(e^{tx})$",
+        "$M_X(t) = E(e^{2tx})$",
+        "$M_X(t) = E(e^t)$",
+        "$M_X(t) = E(e^x)$"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "mgf",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 57,
+      "questionText": "Given the moment generating function $M(t) = \\exp\\left\\{\\mu t + \\frac{\\sigma^2 t^2}{2}\\right\\}$. To which type of distribution does this MGF belong?",
+      "options": [
+        "poisson",
+        "normal",
+        "geometric",
+        "uniform",
+        "pareto"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "mgf",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 58,
+      "questionText": "The Poisson distribution can be viewed as providing an approximation to the Binomial distribution when",
+      "options": [
+        "The sample size is large, and probability of 'success' is very small",
+        "The sample size is small, and probability of 'success' is very small",
+        "The sample size is small, and probability of 'success' is very large",
+        "The sample size is large, and probability of 'success' is very large",
+        "No approximation exists"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "poisson_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 59,
+      "questionText": "MGF of the Poisson distribution is",
+      "options": [
+        "$e^{\\lambda(e^t - 1)}$",
+        "$M(t) = \\exp\\left\\{\\mu t + \\frac{\\sigma^2 t^2}{2}\\right\\}$",
+        "lambda",
+        "$[pe^t + (1-p)]^n$",
+        "Does not exist"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "mgf",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 60,
+      "questionText": "First derivative of MGF at t = 0 is",
+      "options": [
+        "variance",
+        "Expected value",
+        "0",
+        "Function depending on t",
+        "No such thing exists"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "mgf",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 61,
+      "questionText": "Given the following joint probability distribution table (X: -1, 1; Y: -1, 0, 1) with P(-1,-1)=1/8, P(1,-1)=1/2, P(-1,0)=0, P(1,0)=1/4, P(-1,1)=1/8, P(1,1)=0. Find E(X).",
+      "options": [
+        "1/3",
+        "1/2",
+        "1",
+        "0",
+        "1/4"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 62,
+      "questionText": "Given the following joint probability distribution table (X: -1, 1; Y: -1, 0, 1) with P(-1,-1)=1/8, P(1,-1)=1/2, P(-1,0)=0, P(1,0)=1/4, P(-1,1)=1/8, P(1,1)=0. Find E(Y).",
+      "options": [
+        "-1/3",
+        "-1/2",
+        "1/8",
+        "0",
+        "-1/4"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 63,
+      "questionText": "Given the following joint probability distribution table (X: -1, 1; Y: -1, 0, 1) with P(-1,-1)=1/8, P(1,-1)=1/2, P(-1,0)=0, P(1,0)=1/4, P(-1,1)=1/8, P(1,1)=0. Find cov(X,Y).",
+      "options": [
+        "1/3",
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "covariance",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 64,
+      "questionText": "Let X and Y be discrete random variables with joint probability function: P(x=2,y=0)=0.05, P(x=3,y=0)=0.05, P(x=4,y=0)=0.15, P(x=5,y=0)=0.05, P(x=2,y=1)=0.40, P(x=3,y=1)=0, P(x=4,y=1)=0, P(x=5,y=1)=0, P(x=2,y=2)=0.05, P(x=3,y=2)=0.15, P(x=4,y=2)=0.10, P(x=5,y=2)=0. Find E(X).",
+      "options": [
+        "1",
+        "2.85",
+        "0.05",
+        "3.5",
+        "2.50"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 65,
+      "questionText": "Let X and Y be discrete random variables with joint probability function: P(x=2,y=0)=0.05, P(x=3,y=0)=0.05, P(x=4,y=0)=0.15, P(x=5,y=0)=0.05, P(x=2,y=1)=0.40, P(x=3,y=1)=0, P(x=4,y=1)=0, P(x=5,y=1)=0, P(x=2,y=2)=0.05, P(x=3,y=2)=0.15, P(x=4,y=2)=0.10, P(x=5,y=2)=0. Find E(Y).",
+      "options": [
+        "2.85",
+        "1",
+        "0.05",
+        "3.5",
+        "2.50"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 66,
+      "questionText": "Find the formula of Binomial distribution",
+      "options": [
+        "$P_n(k) = \\frac{1}{\\sqrt{npq}} \\cdot \\varphi(x)$",
+        "$P_n(k) = C_n^k \\cdot p^k \\cdot (1-p)^{n-k}$",
+        "$P_n(k) = \\frac{\\lambda^k e^{-\\lambda}}{k!}$",
+        "$P(B|A) = \\frac{P(B) \\cdot P(A|B)}{P(A)}$",
+        "$P_n(k) = \\frac{1}{\\sqrt{npq}} \\cdot e^{-2p(1-p)}$"
+      ],
+      "correctOptionIndex": 1,
+      "topicId": "binomial_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 67,
+      "questionText": "How would it change the expected value of a random variable X if we multiply the X by a number k?",
+      "options": [
+        "$M[kX] = k \\cdot M[X]$",
+        "$M[kX] = |k| \\cdot M[X]$",
+        "$M[kX] = M[X]$",
+        "$M[kX] = M[X] + k$",
+        "$M[kX] = k^2 \\cdot M[X]$"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 68,
+      "questionText": "Indicate the correct statement related to Poisson random variable $P(X=i) = \\frac{\\lambda^i}{i!} e^{-\\lambda}$.",
+      "options": [
+        "$\\lambda = np \\approx const$, $n \\to \\infty$, $p \\to 0$",
+        "$\\lambda = \\frac{n}{p}$, $n \\to \\infty$",
+        "$\\lambda = ep$, $n \\to \\infty$",
+        "$\\lambda = n^p$, p is const",
+        "None of the given answers is correct"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "poisson_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 69,
+      "questionText": "Given: X takes values 1 and 3 with probabilities 0.4 and 0.6; Y takes values 2 and 4 with probabilities 0.2 and 0.8. Find E[X+Y].",
+      "options": [
+        "5.8",
+        "2.2",
+        "2",
+        "8.8",
+        "10"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "expected_value",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 70,
+      "questionText": "Given a normal distribution with µ = 90 and σ = 10, what is the probability that X > 75?",
+      "options": [
+        "0.93",
+        "0.25",
+        "0.49",
+        "0.45",
+        "0.01"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "normal_distribution",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 71,
+      "questionText": "Let X and Y be the lifespans (in hours) of two electronic devices with joint probability density function $f_{X,Y}(x,y) = ce^{-x-2y}$ for $0 < x < y$, $0 < y < \\infty$, 0 otherwise. Determine the value of c.",
+      "options": [
+        "c=6",
+        "c=3/2",
+        "c=12",
+        "c=1",
+        "c=2"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    },
+    {
+      "id": 72,
+      "questionText": "Let X and Y be the lifespans (in hours) of two electronic devices with joint probability density function $f_{X,Y}(x,y) = ce^{-x-y}$ for $0 < x < y$, $0 < y < \\infty$, 0 otherwise. Determine the value of c.",
+      "options": [
+        "c=2",
+        "c=3/2",
+        "c=12",
+        "c=1",
+        "c=4"
+      ],
+      "correctOptionIndex": 0,
+      "topicId": "continuous_distributions",
+      "image": "",
+      "source": "stat_questions.json",
+      "explanation": ""
+    }
+  ]
+}

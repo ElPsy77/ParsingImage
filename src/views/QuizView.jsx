@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { Trophy, ArrowRight, RotateCcw, AlertCircle } from 'lucide-react';
+import { Trophy, ArrowRight, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { marked } from 'marked';
+import { AI_PROVIDERS, askAi, buildAiPrompt } from '../utils/aiAssist';
 import styles from './QuizView.module.scss';
 
 const QuizView = () => {
@@ -15,6 +16,22 @@ const QuizView = () => {
   const [isFinished, setIsFinished] = useState(false);
   const [count, setCount] = useState(10);
   const [isTypesetting, setIsTypesetting] = useState(false);
+  const [selectedAi, setSelectedAi] = useState('chatgpt');
+  const [aiNotice, setAiNotice] = useState(null);
+  
+  const scheduleTypeset = (attempt = 0) => {
+    if (!window.MathJax) {
+      if (attempt < 10) {
+        setTimeout(() => scheduleTypeset(attempt + 1), 120);
+      }
+      return;
+    }
+
+    setIsTypesetting(true);
+    window.MathJax.typesetPromise()
+      .catch(err => console.error(err))
+      .finally(() => setIsTypesetting(false));
+  };
 
   const startQuiz = () => {
     const shuffled = [...catalog.questions].sort(() => 0.5 - Math.random());
@@ -44,31 +61,25 @@ const QuizView = () => {
   };
 
   useEffect(() => {
-    if (window.MathJax) {
-      setIsTypesetting(true);
-      window.MathJax.typesetPromise()
-        .catch(err => console.error(err))
-        .finally(() => setIsTypesetting(false));
-    }
+    scheduleTypeset();
   }, [currentIndex, isFinished, isActive]);
 
   useEffect(() => {
-    if (selectedOption !== null && window.MathJax) {
-      setIsTypesetting(true);
-      window.MathJax.typesetPromise()
-        .catch(err => console.error(err))
-        .finally(() => setIsTypesetting(false));
+    if (selectedOption !== null) {
+      scheduleTypeset();
     }
   }, [selectedOption]);
 
   const renderMarkdown = (text) => {
-    if (!text) return '';
-    const escaped = text
+    const safeText = typeof text === 'string' ? text : String(text ?? '');
+    if (!safeText) return { __html: '' };
+    const escaped = safeText
       .replace(/\\\(/g, '\\\\(')
       .replace(/\\\)/g, '\\\\)')
       .replace(/\\\[/g, '\\\\[')
       .replace(/\\\]/g, '\\\\]');
-    return { __html: marked.parse(escaped) };
+    const html = marked.parse(escaped);
+    return { __html: typeof html === 'string' ? html : '' };
   };
 
   if (isFinished) {
@@ -107,7 +118,7 @@ const QuizView = () => {
             <input 
               type="number" 
               value={count} 
-              onChange={(e) => setCount(Math.max(5, Math.min(445, e.target.value)))}
+              onChange={(e) => setCount(Math.max(5, Math.min(catalog.questions.length || 5, Number(e.target.value) || 5)))}
               className={styles.input}
             />
           </div>
@@ -137,9 +148,11 @@ const QuizView = () => {
       </div>
 
       <article className={styles.card}>
-        <div className={styles.imageWrap}>
-          <img src={q.image} alt="Вопрос" />
-        </div>
+        {q.image && (
+          <div className={styles.imageWrap}>
+            <img src={q.image} alt="Вопрос" />
+          </div>
+        )}
         <div className={`${styles.body} ${isTypesetting ? styles.typesetting : ''}`}>
           {q.questionText && <div className={styles.questionText} dangerouslySetInnerHTML={renderMarkdown(q.questionText)} />}
           
@@ -156,15 +169,56 @@ const QuizView = () => {
                   className={btnClass}
                   onClick={() => handleOptionSelect(idx)}
                   disabled={selectedOption !== null}
-                  dangerouslySetInnerHTML={{ __html: opt }}
-                />
+                >
+                  {typeof opt === 'string' ? opt : String(opt ?? '')}
+                </button>
               );
             })}
           </div>
 
           <AnimatePresence>
-            {selectedOption !== null && (
+            {selectedOption !== null && q.explanation && (
               <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} className={styles.footer}>
+                <div className={styles.aiTools}>
+                  <select
+                    value={selectedAi}
+                    onChange={(e) => setSelectedAi(e.target.value)}
+                    className={styles.aiSelect}
+                  >
+                    {AI_PROVIDERS.map(provider => (
+                      <option key={provider.id} value={provider.id}>{provider.label}</option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    className={styles.aiButton}
+                    onClick={async () => {
+                      const topicName = catalog.topics.find(t => t.id === q.topicId)?.name || '';
+                      const prompt = buildAiPrompt(q, topicName);
+                      const result = await askAi({ providerId: selectedAi, prompt });
+                      setAiNotice(result);
+                    }}
+                  >
+                    <Bot size={16} />
+                    <span>Спросить у ИИ</span>
+                  </button>
+                </div>
+                {aiNotice && (
+                  <div className={styles.aiNotice}>
+                    <span>
+                      {aiNotice.copied
+                        ? 'Промпт скопирован. Вставьте в чат (Cmd/Ctrl + V).'
+                        : 'Не удалось скопировать автоматически. Скопируйте промпт вручную.'}
+                    </span>
+                    <button
+                      type="button"
+                      className={styles.aiOpenButton}
+                      onClick={() => window.open(aiNotice.url, '_blank', 'noopener,noreferrer')}
+                    >
+                      Открыть {aiNotice.providerLabel}
+                    </button>
+                  </div>
+                )}
                 <div className={styles.explanation} dangerouslySetInnerHTML={renderMarkdown(q.explanation)} />
                 <button onClick={handleNext} className={styles.nextBtn}>
                   Далее <ArrowRight size={18} />

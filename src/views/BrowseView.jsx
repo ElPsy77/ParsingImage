@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useApp } from '../context/AppContext';
-import { Search, Filter, ExternalLink } from 'lucide-react';
+import { Search, Filter, ExternalLink, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './BrowseView.module.scss';
 
@@ -11,14 +11,18 @@ const BrowseView = () => {
   const [statusFilter, setStatusFilter] = useState('all');
 
   const filtered = useMemo(() => {
+    const starredList = progress.starred || [];
+    const knownList = progress.known || [];
+    const viewedList = progress.viewed || [];
+
     return catalog.questions.filter(q => {
       const s = search.toLowerCase();
       const searchMatch = !search || String(q.id).includes(s) || (q.questionText && q.questionText.toLowerCase().includes(s));
       const topicMatch = topicFilter === 'all' || q.topicId === topicFilter;
       const statusMatch = statusFilter === 'all' || 
-        (statusFilter === 'unviewed' && !progress.viewed.includes(q.id)) ||
-        (statusFilter === 'starred' && progress.starred.includes(q.id)) ||
-        (statusFilter === 'known' && progress.known.includes(q.id));
+        (statusFilter === 'unviewed' && !viewedList.includes(q.id)) ||
+        (statusFilter === 'starred' && starredList.includes(q.id)) ||
+        (statusFilter === 'known' && knownList.includes(q.id));
       
       return searchMatch && topicMatch && statusMatch;
     });
@@ -56,30 +60,44 @@ const BrowseView = () => {
       </div>
 
       <div className={styles.grid}>
-        {filtered.map((q, idx) => (
-          <motion.div 
-            key={q.id}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: idx * 0.02 }}
-            className={`${styles.item} ${progress.known.includes(q.id) ? styles.known : ''}`}
-            onClick={() => handleOpen(q.id)}
-          >
-            <div className={styles.preview}>
-              <img src={q.image} alt="" loading="lazy" />
-            </div>
-            <div className={styles.info}>
-              <div className={styles.infoHead}>
-                <span className={styles.id}>#{q.id}</span>
-                <span className={styles.topic}>{catalog.topics.find(t => t.id === q.topicId)?.name}</span>
+        {filtered.map((q, idx) => {
+          const isStarred = (progress.starred || []).includes(q.id);
+          const isKnown = (progress.known || []).includes(q.id);
+          
+          return (
+            <motion.div 
+              key={q.id}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.02 }}
+              className={`${styles.item} ${isKnown ? styles.known : ''} ${isStarred ? styles.starred : ''}`}
+              onClick={() => handleOpen(q.id)}
+            >
+              <div className={styles.preview}>
+                {q.image ? (
+                  <img src={q.image} alt="" loading="lazy" />
+                ) : (
+                  <span className={styles.noImage}>TXT</span>
+                )}
               </div>
-              <p className={styles.text}>{q.questionText || 'Вопрос на изображении'}</p>
-            </div>
-            <div className={styles.overlay}>
-              <ExternalLink size={24} />
-            </div>
-          </motion.div>
-        ))}
+              <div className={styles.info}>
+                <div className={styles.infoHead}>
+                  <div className={styles.idWrap}>
+                    <span className={styles.id}>#{q.id}</span>
+                    {isStarred && (
+                      <Star size={14} className={styles.starIcon} />
+                    )}
+                  </div>
+                  <span className={styles.topic}>{catalog.topics.find(t => t.id === q.topicId)?.name}</span>
+                </div>
+                <p className={styles.text}>{q.questionText || 'Вопрос на изображении'}</p>
+              </div>
+              <div className={styles.overlay}>
+                <ExternalLink size={24} />
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
 
       {filtered.length === 0 && (

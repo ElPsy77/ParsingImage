@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { ChevronLeft, ChevronRight, Star, CheckCircle, Hash } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star, CheckCircle, Hash, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { marked } from 'marked';
+import { AI_PROVIDERS, askAi, buildAiPrompt } from '../utils/aiAssist';
 import styles from './StudyView.module.scss';
 
 const StudyView = () => {
@@ -17,6 +18,22 @@ const StudyView = () => {
     return 0;
   });
   const [isTypesetting, setIsTypesetting] = useState(false);
+  const [selectedAi, setSelectedAi] = useState('chatgpt');
+  const [aiNotice, setAiNotice] = useState(null);
+  
+  const scheduleTypeset = (attempt = 0) => {
+    if (!window.MathJax) {
+      if (attempt < 10) {
+        setTimeout(() => scheduleTypeset(attempt + 1), 120);
+      }
+      return;
+    }
+
+    setIsTypesetting(true);
+    window.MathJax.typesetPromise()
+      .catch(err => console.error(err))
+      .finally(() => setIsTypesetting(false));
+  };
 
   // Apply filters
   const filteredQuestions = catalog.questions.filter(q => {
@@ -30,6 +47,17 @@ const StudyView = () => {
 
   const currentQuestion = filteredQuestions[currentIndex];
 
+  useEffect(() => {
+    if (filteredQuestions.length === 0) {
+      setCurrentIndex(0);
+      return;
+    }
+
+    if (currentIndex >= filteredQuestions.length) {
+      setCurrentIndex(0);
+    }
+  }, [filteredQuestions.length, currentIndex]);
+
   // Sync with catalog questions once they load initially
   useEffect(() => {
     if (catalog.questions.length > 0 && progress.lastIndex) {
@@ -38,7 +66,7 @@ const StudyView = () => {
         setCurrentIndex(idx);
       }
     }
-  }, [catalog.questions.length === 0]);
+  }, [catalog.questions, progress.lastIndex]);
 
   useEffect(() => {
     if (currentQuestion) {
@@ -56,24 +84,14 @@ const StudyView = () => {
 
   useEffect(() => {
     setSelectedOption(null);
-    if (window.MathJax) {
-      setIsTypesetting(true);
-      // Wait for Framer Motion exit transition to complete and new card to mount in the DOM
-      const timer = setTimeout(() => {
-        window.MathJax.typesetPromise()
-          .catch(err => console.error(err))
-          .finally(() => setIsTypesetting(false));
-      }, 300);
-      return () => clearTimeout(timer);
-    }
+    // Wait for card transition + handle delayed MathJax script load
+    const timer = setTimeout(() => scheduleTypeset(), 300);
+    return () => clearTimeout(timer);
   }, [currentQuestion?.id]);
 
   useEffect(() => {
-    if (selectedOption !== null && window.MathJax) {
-      setIsTypesetting(true);
-      window.MathJax.typesetPromise()
-        .catch(err => console.error(err))
-        .finally(() => setIsTypesetting(false));
+    if (selectedOption !== null) {
+      scheduleTypeset();
     }
   }, [selectedOption]);
 
@@ -82,13 +100,15 @@ const StudyView = () => {
   }
 
   const renderMarkdown = (text) => {
-    if (!text) return '';
-    const escaped = text
+    const safeText = typeof text === 'string' ? text : String(text ?? '');
+    if (!safeText) return { __html: '' };
+    const escaped = safeText
       .replace(/\\\(/g, '\\\\(')
       .replace(/\\\)/g, '\\\\)')
       .replace(/\\\[/g, '\\\\[')
       .replace(/\\\]/g, '\\\\]');
-    return { __html: marked.parse(escaped) };
+    const html = marked.parse(escaped);
+    return { __html: typeof html === 'string' ? html : '' };
   };
 
   return (
@@ -150,9 +170,11 @@ const StudyView = () => {
             </div>
           </div>
 
-          <div className={styles.imageWrap}>
-            <img src={currentQuestion.image} alt="Вопрос" />
-          </div>
+          {currentQuestion.image && (
+            <div className={styles.imageWrap}>
+              <img src={currentQuestion.image} alt="Вопрос" />
+            </div>
+          )}
 
           <div className={`${styles.content} ${isTypesetting ? styles.typesetting : ''}`}>
             {currentQuestion.questionText && (
@@ -175,19 +197,60 @@ const StudyView = () => {
                     className={btnClass}
                     disabled={selectedOption !== null}
                     onClick={() => setSelectedOption(idx)}
-                    dangerouslySetInnerHTML={{ __html: opt }}
-                  />
+                  >
+                    {typeof opt === 'string' ? opt : String(opt ?? '')}
+                  </button>
                 );
               })}
             </div>
 
-            {selectedOption !== null && (
+            {selectedOption !== null && currentQuestion.explanation && (
               <motion.div 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 className={styles.explanation}
               >
                 <h3>💡 Разбор решения</h3>
+                <div className={styles.aiTools}>
+                  <select
+                    value={selectedAi}
+                    onChange={(e) => setSelectedAi(e.target.value)}
+                    className={styles.aiSelect}
+                  >
+                    {AI_PROVIDERS.map(provider => (
+                      <option key={provider.id} value={provider.id}>{provider.label}</option>
+                    ))}
+                  </select>
+                  <button
+                    type="button"
+                    className={styles.aiButton}
+                    onClick={async () => {
+                      const topicName = catalog.topics.find(t => t.id === currentQuestion.topicId)?.name || '';
+                      const prompt = buildAiPrompt(currentQuestion, topicName);
+                      const result = await askAi({ providerId: selectedAi, prompt });
+                      setAiNotice(result);
+                    }}
+                  >
+                    <Bot size={16} />
+                    <span>Спросить у ИИ</span>
+                  </button>
+                </div>
+                {aiNotice && (
+                  <div className={styles.aiNotice}>
+                    <span>
+                      {aiNotice.copied
+                        ? 'Промпт скопирован. Вставьте в чат (Cmd/Ctrl + V).'
+                        : 'Не удалось скопировать автоматически. Скопируйте промпт вручную.'}
+                    </span>
+                    <button
+                      type="button"
+                      className={styles.aiOpenButton}
+                      onClick={() => window.open(aiNotice.url, '_blank', 'noopener,noreferrer')}
+                    >
+                      Открыть {aiNotice.providerLabel}
+                    </button>
+                  </div>
+                )}
                 <div className={styles.markdownBody} dangerouslySetInnerHTML={renderMarkdown(currentQuestion.explanation)} />
               </motion.div>
             )}
