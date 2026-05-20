@@ -1,5 +1,5 @@
 export const AI_PROVIDERS = [
-  { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com/?q=' },
+  { id: 'chatgpt', label: 'ChatGPT', url: 'https://chatgpt.com/' },
   { id: 'gemini', label: 'Gemini', url: 'https://gemini.google.com/app' },
   { id: 'claude', label: 'Claude', url: 'https://claude.ai/new' }
 ];
@@ -31,8 +31,7 @@ export const buildAiPrompt = (question, topicName = '') => {
 
 export const askAi = async ({ providerId, prompt }) => {
   const provider = AI_PROVIDERS.find(p => p.id === providerId) || AI_PROVIDERS[0];
-  const encodedPrompt = encodeURIComponent(prompt);
-  const url = provider.id === 'chatgpt' ? `${provider.url}${encodedPrompt}` : provider.url;
+  const url = provider.url; // Use base URL to avoid HTTP 431 Request Header Fields Too Large
   let copied = false;
 
   try {
