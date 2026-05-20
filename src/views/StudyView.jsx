@@ -55,34 +55,34 @@ const StudyView = () => {
   ]);
 
   const currentQuestion = filteredQuestions[currentIndex];
+  const lastSyncedId = React.useRef(progress.lastIndex);
 
-  // Sync currentIndex with filteredQuestions and progress.lastIndex
+  // 1. Sync currentIndex with filteredQuestions only when the list or subject changes
   useEffect(() => {
     if (filteredQuestions.length === 0) {
       if (currentIndex !== 0) setCurrentIndex(0);
       return;
     }
 
-    if (currentIndex >= filteredQuestions.length) {
-      setCurrentIndex(0);
-      return;
-    }
-
-    // Try to find the last viewed question in the current filtered list
-    if (progress.lastIndex) {
-      const qAtCurrent = filteredQuestions[currentIndex];
-      if (!qAtCurrent || qAtCurrent.id !== progress.lastIndex) {
-        const idxByLast = filteredQuestions.findIndex(q => q.id === progress.lastIndex);
-        if (idxByLast >= 0 && idxByLast !== currentIndex) {
-          setCurrentIndex(idxByLast);
-        }
+    // Try to stay on the same question if it's in the new list
+    const targetId = lastSyncedId.current || progress.lastIndex;
+    if (targetId) {
+      const idx = filteredQuestions.findIndex(q => q.id === targetId);
+      if (idx >= 0) {
+        if (idx !== currentIndex) setCurrentIndex(idx);
+      } else if (currentIndex >= filteredQuestions.length) {
+        setCurrentIndex(0);
       }
+    } else if (currentIndex >= filteredQuestions.length) {
+      setCurrentIndex(0);
     }
-  }, [filteredQuestions, progress.lastIndex]); // currentIndex removed from deps to prevent loops
+  }, [filteredQuestions]); // ONLY when the list of questions changes
 
-  // Mark viewed and update lastIndex - separate from navigation logic
+  // 2. Mark viewed and update lastIndex - this is the "save" side
   useEffect(() => {
     if (currentQuestion?.id) {
+      lastSyncedId.current = currentQuestion.id;
+      
       // Avoid automatic marking if it would cause the question to disappear immediately (loop)
       if (statusFilter !== 'unviewed') {
         markViewed(currentQuestion.id);
@@ -102,7 +102,7 @@ const StudyView = () => {
   const resetFilters = () => {
     setTopicFilter('all');
     setStatusFilter('all');
-    setCurrentIndex(0);
+    // We don't set currentIndex(0) here, the sync effect will find the best fit
   };
 
   useEffect(() => {
