@@ -7111,78 +7111,23 @@
     },
     {
       "id": "domain",
-      "name": "Область определения",
-      "keywords": [
-        "domain",
-        "область определения",
-        "range"
-      ]
+      "name": "Область определения"
     },
     {
       "id": "limit",
-      "name": "Пределы",
-      "keywords": [
-        "limit",
-        "предел",
-        "lim "
-      ]
+      "name": "Пределы"
     },
     {
       "id": "derivative",
-      "name": "Производные",
-      "keywords": [
-        "derivative",
-        "производная",
-        "differentia",
-        "дифференц"
-      ]
+      "name": "Производные"
     },
     {
       "id": "integral",
-      "name": "Интегралы",
-      "keywords": [
-        "integral",
-        "интеграл",
-        "antiderivative"
-      ]
-    },
-    {
-      "id": "sequence",
-      "name": "Последовательности",
-      "keywords": [
-        "sequence",
-        "последовательность",
-        "x_n"
-      ]
+      "name": "Интегралы"
     },
     {
       "id": "series",
-      "name": "Ряды",
-      "keywords": [
-        "series",
-        "ряд"
-      ]
-    },
-    {
-      "id": "continuity",
-      "name": "Непрерывность",
-      "keywords": [
-        "continuity",
-        "непрерывность",
-        "discontinuity"
-      ]
-    },
-    {
-      "id": "extremum",
-      "name": "Экстремумы",
-      "keywords": [
-        "extremum",
-        "maximum",
-        "minimum",
-        "экстремум",
-        "максимум",
-        "минимум"
-      ]
+      "name": "Ряды"
     },
     {
       "id": "other",
